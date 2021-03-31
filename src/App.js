@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import file from './search.htm';
+import file from './api/search.htm';
 import logo from './logo.svg';
 import './App.css';
 import { withAuthenticator } from 'aws-amplify-react'
