@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     // page transition
     window.location.href = '../api/search.html';
-    //return (
+    return (
     //  <div className="App">
     //    <header className="App-header">
     //      <img src={logo} className="App-logo" alt="logo" />
@@ -29,7 +29,7 @@ class App extends Component {
      //     </a>
      //   </header>
      // </div>
-    //);
+    );
   }
 }
 
