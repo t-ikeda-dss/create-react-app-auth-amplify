@@ -21,7 +21,7 @@ class App extends Component {
           </p>
           <a
             className="App-link"
-            href=""../api/search.html""
+            href="../api/search.html"
             target="_blank"
             rel="noopener noreferrer"
           >
