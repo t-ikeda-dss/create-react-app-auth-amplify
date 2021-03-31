@@ -7,7 +7,7 @@ import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 // script.js
 //--import { callSearchApi } from './script.js';
-import file from '../api/search.html';
+import file from './search.txt';
 
 class App extends Component {
   componentDidMount() {
