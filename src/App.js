@@ -28,7 +28,6 @@ class App extends Component {
         </header>
       </div>
       <div class="form-group2" id="emb">
-        callSearchApi("aws");
       </div>
     );
   }
