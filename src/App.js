@@ -11,7 +11,7 @@ Amplify.configure(aws_exports);
 class App extends Component {
   render() {
     // page transition
-    window.location.href = 'search/search.html';
+    window.location.href = '../api/search.html';
     return (
       <div className="App">
         <header className="App-header">
