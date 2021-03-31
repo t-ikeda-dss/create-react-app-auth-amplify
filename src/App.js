@@ -6,7 +6,7 @@ import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 // script.js
-import { callSearchApi } from './script.js';
+//--import { callSearchApi } from './script.js';
 
 class App extends Component {
   render() {
