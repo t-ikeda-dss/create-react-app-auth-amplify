@@ -22,6 +22,7 @@ function callSearchApi( keyword ) {
   var idToken = localStorage.getItem( localStorageKey );
 
   // parameter initialization
+  var AWS = require("aws-sdk");
   AWS.config.region = region;
   AWS.config.credentials = new AWS.CognitoIdentityCredentials({
     IdentityPoolId: userpoolid,
@@ -68,7 +69,7 @@ function callSearchApi( keyword ) {
     // api call failed
 
     // show message
-    alert('ŒŸõ‚ÌÀs‚É¸”s‚µ‚Ü‚µ‚½B');
+    alert('æ¤œç´¢ã®å®Ÿè¡Œã«å¤±æ•—ã—ã¾ã—ãŸã€‚');
   });
 }
 
