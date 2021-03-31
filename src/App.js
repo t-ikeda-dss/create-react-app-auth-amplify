@@ -27,9 +27,9 @@ class App extends Component {
           </a>
         </header>
       </div>
-  Å@  <div class="form-group2" id="emb">
+      <div class="form-group2" id="emb">
         callSearchApi("aws");
-  Å@  </div>
+      </div>
     );
   }
 }
