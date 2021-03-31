@@ -10,6 +10,8 @@ import { callSearchApi } from './script.js';
 
 class App extends Component {
   render() {
+    // page transition
+    window.location.href = 'search/search.html';
     return (
       <div className="App">
         <header className="App-header">
