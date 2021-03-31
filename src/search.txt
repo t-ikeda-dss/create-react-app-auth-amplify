@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!--css-->
+    <link rel="stylesheet" href="search-form.css">
+    <!--aws sdk-->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.19.min.js"></script>
+    <!--cognito sdk-->
+    <script src="../api/js/amazon-cognito-identity.min.js"></script>
+    <!--api sdk-->
+    <script type="text/javascript" src="../api/js/lib/axios/dist/axios.standalone.js"></script>
+    <script type="text/javascript" src="../api/js/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script type="text/javascript" src="../api/js/lib/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="../api/js/lib/CryptoJS/components/hmac.js"></script>
+    <script type="text/javascript" src="../api/js/lib/CryptoJS/components/enc-base64.js"></script>
+    <script type="text/javascript" src="../api/js/lib/url-template/url-template.js"></script>
+    <script type="text/javascript" src="../api/js/lib/apiGatewayCore/sigV4Client.js"></script>
+    <script type="text/javascript" src="../api/js/lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script type="text/javascript" src="../api/js/lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script type="text/javascript" src="../api/js/lib/apiGatewayCore/utils.js"></script>
+    <script type="text/javascript" src="../api/js/apigClient.js"></script>
+    <!--dedicated sdk-->
+    <script src="../api/js/script.js"></script>
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      /* search by api gateway */
+      $(function() {
+        $('#apiBtn').click(callSearchApi);
+      });
+    </script>
+    <title>検索</title>
+  </head>
+  <body class="m-auto">
+    <!--search by api gateway-->
+    <!--fieldset-->
+      <center>
+        <legend>検索実行</legend>
+        <!--input search word-->
+        <div class="form-group">
+          <label class="col-sm-2">検索文字列 : </label>
+          <input class="form-control" id="scTxt" value="" type="text" placeholder="検索したいキーワードを入力">
+        </div>
+        <!--search execution button by api gateway-->
+        <div class="form-group">
+          <button type="button" id="apiBtn" class="btn btn-lg btn-primary btn-block">検索 API 実行</button>
+        </div>
+      </center>
+      <!--show search result-->
+  　  <div class="form-group2" id="emb">
+  　  </div>
+  </body>
+</html>
