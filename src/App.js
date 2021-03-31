@@ -27,7 +27,7 @@ class App extends Component {
           </a>
         </header>
       </div>
-      <div class="form-group2" id="emb">
+      <div className="App2" id="emb">
       </div>
     );
   }
