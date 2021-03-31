@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import file from './search.htm';
 import logo from './logo.svg';
 import './App.css';
 import { withAuthenticator } from 'aws-amplify-react'
@@ -7,7 +8,6 @@ import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 // script.js
 //--import { callSearchApi } from './script.js';
-import file from './search.txt';
 
 class App extends Component {
   componentDidMount() {
