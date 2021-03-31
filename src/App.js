@@ -27,8 +27,7 @@ class App extends Component {
           </a>
         </header>
       </div>
-      <div className="App2" id="emb">
-      </div>
+      <div className="App2" id="emb"><p>test</p></div>
     );
   }
 }
