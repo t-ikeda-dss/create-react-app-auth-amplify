@@ -17,8 +17,6 @@ class App extends Component {
   }
 
   render() {
-    // page transition
-    //--window.location.href = '../api/search.html';
     return (
       <div id="inner"></div>
     );
