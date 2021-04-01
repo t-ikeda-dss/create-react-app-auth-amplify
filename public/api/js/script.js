@@ -54,10 +54,10 @@ function callSearchApi() {
   };
 
   // output execution log to debug console
-  console.log('call testSearchGet');
+  console.log('call searchFunctionGet');
   // call search api
   //  -> Call the OPTIONS method as well as the GET method internally for authentication
-  apigClient.testSearchGet(params, body, additionalParams).then(function(result){
+  apigClient.searchFunctionGet(params, body, additionalParams).then(function(result){
     // api call success
 
     // embedded html
@@ -66,7 +66,7 @@ function callSearchApi() {
     // api call failed
 
     // show message
-    alert('ŒŸõ‚ÌÀs‚É¸”s‚µ‚Ü‚µ‚½B');
+    alert('æ¤œç´¢ã®å®Ÿè¡Œã«å¤±æ•—ã—ã¾ã—ãŸã€‚');
   });
 }
 
