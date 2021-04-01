@@ -53,7 +53,7 @@ apigClientFactory.newClient = function (config) {
 
     
     // extract endpoint and path from url
-    var invokeUrl = 'https://ln7hfi97tf.execute-api.ap-northeast-1.amazonaws.com/default';
+    var invokeUrl = 'https://gf3u303pmb.execute-api.ap-northeast-1.amazonaws.com/default';
     var endpoint = /(^https?:\/\/[^\/]+)/g.exec(invokeUrl)[1];
     var pathComponent = invokeUrl.substring(endpoint.length);
 
@@ -101,39 +101,39 @@ apigClientFactory.newClient = function (config) {
     };
     
     
-    apigClient.testSearchGet = function (params, body, additionalParams) {
+    apigClient.searchFunctionGet = function (params, body, additionalParams) {
         if(additionalParams === undefined) { additionalParams = {}; }
         
         apiGateway.core.utils.assertParametersDefined(params, ['q'], ['body']);
         
-        var testSearchGetRequest = {
+        var searchFunctionGetRequest = {
             verb: 'get'.toUpperCase(),
-            path: pathComponent + uritemplate('/TestSearch').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            path: pathComponent + uritemplate('/SearchFunction').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
             headers: apiGateway.core.utils.parseParametersToObject(params, []),
             queryParams: apiGateway.core.utils.parseParametersToObject(params, ['q']),
             body: body
         };
         
         
-        return apiGatewayClient.makeRequest(testSearchGetRequest, authType, additionalParams, config.apiKey);
+        return apiGatewayClient.makeRequest(searchFunctionGetRequest, authType, additionalParams, config.apiKey);
     };
     
     
-    apigClient.testSearchOptions = function (params, body, additionalParams) {
+    apigClient.searchFunctionOptions = function (params, body, additionalParams) {
         if(additionalParams === undefined) { additionalParams = {}; }
         
         apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
         
-        var testSearchOptionsRequest = {
+        var searchFunctionOptionsRequest = {
             verb: 'options'.toUpperCase(),
-            path: pathComponent + uritemplate('/TestSearch').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            path: pathComponent + uritemplate('/SearchFunction').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
             headers: apiGateway.core.utils.parseParametersToObject(params, []),
             queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
             body: body
         };
         
         
-        return apiGatewayClient.makeRequest(testSearchOptionsRequest, authType, additionalParams, config.apiKey);
+        return apiGatewayClient.makeRequest(searchFunctionOptionsRequest, authType, additionalParams, config.apiKey);
     };
     
 
