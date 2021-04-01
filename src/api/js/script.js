@@ -11,6 +11,8 @@ const clientid = '30j2k1vbmbsc85hqbi7omo8pp6';
 
 // search API execution function
 function callSearchApi() {
+    // show message
+    alert('2nd -> call callSearchApi');
 
   // local storage key name
   var localStorageKey = "CognitoIdentityServiceProvider.30j2k1vbmbsc85hqbi7omo8pp6.dss_ikeda.idToken";
@@ -66,7 +68,7 @@ function callSearchApi() {
     // api call failed
 
     // show message
-    alert('ŒŸõ‚ÌÀs‚É¸”s‚µ‚Ü‚µ‚½B');
+    alert('æ¤œç´¢ã®å®Ÿè¡Œã«å¤±æ•—ã—ã¾ã—ãŸã€‚');
   });
 }
 
