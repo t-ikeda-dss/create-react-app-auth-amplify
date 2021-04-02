@@ -10,18 +10,24 @@ Amplify.configure(aws_exports);
 class App extends Component {
   
   useScript(url) {
-    //--useEffect(() => {
-      const script = document.createElement('script');
-      script.src = url;
-      script.async = true;
-      document.body.appendChild(script);
-
-    //  return () => {
-    //    document.body.removeChild(script);
-    //  }
-    //}, [url]);
+    const script = document.createElement('script');
+    script.src = url;
+    script.async = true;
+    document.body.appendChild(script);
   };
 
+  useEmbScript(innerScript) {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+
+    const textAlert = document.createTextNode(`alert('hello!')`);
+    script.appendChild(textAlert);
+
+    const head = document.getElementsByTagName('head')[0] as HTMLElement;
+    head.appendChild(script);
+
+  };
+  
   componentDidMount() {
     //@@
     useScript('https://sdk.amazonaws.com/js/aws-sdk-2.7.19.min.js');
@@ -39,7 +45,7 @@ class App extends Component {
     useScript('/api/js/lib/apiGatewayCore/apiGatewayClient.js');
     useScript('/api/js/lib/apiGatewayCore/simpleHttpClient.js');
     useScript('/api/js/lib/apiGatewayCore/utils.js');
-    useScript('$(function() { $('#apiBtn').click(callSearchApi); });');
+    useEmbScript('$(function() { $('#apiBtn').click(callSearchApi); });');
     
     //@@
     //--const script = document.createElement("script");
