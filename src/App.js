@@ -21,7 +21,7 @@ function useEmbScript(innerScript) {
   //const textAlert = document.createTextNode(innerScript); //`alert('hello!')`);
   //script.appendChild(textAlert);
   //document.body.appendChild(script);
-  script.innerHTML = "document.write('This is output by document.write()!')";
+  script.innerHTML = "innerScript";
   document.body.appendChild(script);
 //  this.instance.appendChild(script);
 }
@@ -36,8 +36,6 @@ class App extends Component {
     useScript('/api/js/apigClient.js');
     useScript('/api/js/amazon-cognito-identity.min.js');
     useScript('/api/js/lib/axios/dist/axios.standalone.js');
-    useScript('/api/js/lib/CryptoJS/rollups/hmac-sha256.js');
-    useScript('/api/js/lib/CryptoJS/rollups/sha256.js');
     useScript('/api/js/lib/CryptoJS/components/hmac.js');
     useScript('/api/js/lib/CryptoJS/components/enc-base64.js');
     useScript('/api/js/lib/url-template/url-template.js');
@@ -45,6 +43,8 @@ class App extends Component {
     useScript('/api/js/lib/apiGatewayCore/apiGatewayClient.js');
     useScript('/api/js/lib/apiGatewayCore/simpleHttpClient.js');
     useScript('/api/js/lib/apiGatewayCore/utils.js');
+    useScript('/api/js/lib/CryptoJS/rollups/hmac-sha256.js');
+    useScript('/api/js/lib/CryptoJS/rollups/sha256.js');
     useEmbScript("$(function() { $(\'#apiBtn\').click(callSearchApi); });");
     
     //@@
