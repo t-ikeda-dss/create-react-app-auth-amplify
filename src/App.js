@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import file from './api/search.htm';
 import logo from './logo.svg';
 import './App.css';
-//--import { withAuthenticator } from 'aws-amplify-react'
-import { Authenticator, SignIn } from 'aws-amplify-react';
+import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
@@ -15,9 +14,6 @@ function useScript(url) {
   document.body.appendChild(script);
 }
 
-const MySignIn = ({authState, authData}) => (
- <div>login page</div>
-)
 class App extends Component {
   
   componentDidMount() {
@@ -42,28 +38,11 @@ class App extends Component {
       .then( text => document.querySelector('#inner').innerHTML = text );
   }
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      authState: props.authState || null,
-      authData: props.authData || null
-    }
-  }
-  change = (state, data) => this.setState({ authState: state, authData: data })
-
   render() {
-    if (this.state.authState === 'signedIn') {
-      return (
-        <div id="inner"></div>
-      );
-    }
     return (
-      <Authenticator hide={[SignIn]} onStateChange={this.change}>
-        <MySignIn {...this.state} />
-      </Authenticator>
-    )
+      <div id="inner"></div>
+    );
   }
 }
 
-//--export default withAuthenticator(App, true);
-export default Authenticator(App, true);
+export default withAuthenticator(App, true);
