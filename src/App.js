@@ -43,7 +43,7 @@ class App extends Component {
     useScript('/api/js/lib/apiGatewayCore/apiGatewayClient.js');
     useScript('/api/js/lib/apiGatewayCore/simpleHttpClient.js');
     useScript('/api/js/lib/apiGatewayCore/utils.js');
-    useEmbScript('$(function() { $('#apiBtn').click(callSearchApi); });');
+    //--useEmbScript('$(function() { $('#apiBtn').click(callSearchApi); });');
     
     //@@
     //--const script = document.createElement("script");
