@@ -7,24 +7,23 @@ import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 
-class App extends Component {
   
-  useScript(url) {
-    const script = document.createElement('script');
-    script.src = url;
-    script.async = true;
-    document.body.appendChild(script);
-  }
+function useScript(url) {
+  const script = document.createElement('script');
+  script.src = url;
+  script.async = true;
+  document.body.appendChild(script);
+}
 
-  useEmbScript(innerScript) {
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
+function useEmbScript(innerScript) {
+  const script = document.createElement('script');
+  script.type = 'text/javascript';
+  const textAlert = document.createTextNode(`alert('hello!')`);
+  script.appendChild(textAlert);
+  document.body.appendChild(script);
+}
 
-    const textAlert = document.createTextNode(`alert('hello!')`);
-    script.appendChild(textAlert);
-    
-    document.body.appendChild(script);
-  }
+class App extends Component {
   
   componentDidMount() {
     //@@
