@@ -30,7 +30,7 @@ class App extends Component {
     useScript('https://sdk.amazonaws.com/js/aws-sdk-2.7.19.min.js');
     useScript('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js');
     useScript('/api/js/script.js');
-    useScript('/api/js/apigClient.js.js');
+    useScript('/api/js/apigClient.js');
     useScript('/api/js/amazon-cognito-identity.min.js');
     useScript('/api/js/lib/axios/dist/axios.standalone.js');
     useScript('/api/js/lib/CryptoJS/rollups/hmac-sha256.js');
@@ -42,7 +42,7 @@ class App extends Component {
     useScript('/api/js/lib/apiGatewayCore/apiGatewayClient.js');
     useScript('/api/js/lib/apiGatewayCore/simpleHttpClient.js');
     useScript('/api/js/lib/apiGatewayCore/utils.js');
-    //--useEmbScript('$(function() { $('#apiBtn').click(callSearchApi); });');
+    useEmbScript("$(function() { $(\'#apiBtn\').click(callSearchApi); });");
     
     //@@
     //--const script = document.createElement("script");
