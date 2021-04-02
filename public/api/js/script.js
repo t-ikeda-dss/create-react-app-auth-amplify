@@ -1,9 +1,9 @@
 // aws region
-const region = 'ap-northeast-1';
+const cogniteRegion = 'ap-northeast-1';
 // aws user pool id
-const userpoolid = 'ap-northeast-1_S01Kqn7pX';
+const cognitoUserPoolId = 'ap-northeast-1_S01Kqn7pX';
 // application client id
-const clientid = '30j2k1vbmbsc85hqbi7omo8pp6';
+const cognitoClientId = '30j2k1vbmbsc85hqbi7omo8pp6';
 
 //----------------------------------------------------------------------------------------
 // Functions called from HTML
@@ -23,9 +23,9 @@ function callSearchApi() {
 
   // parameter initialization
   //--var AWS = require("aws-sdk");
-  AWS.config.region = region;
+  AWS.config.region = cogniteRegion;
   AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: userpoolid,
+    IdentityPoolId: cognitoUserPoolId,
   });
 
   // authentication parameters
