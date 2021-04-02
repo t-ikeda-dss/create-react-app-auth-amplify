@@ -6,18 +6,15 @@ import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
-// script.js
-//--import { callSearchApi } from './script.js';
+import React from 'react';
 
 class App extends Component {
   
-  useScript = url => {
+  useScript(url) {
     useEffect(() => {
       const script = document.createElement('script');
-
       script.src = url;
       script.async = true;
-
       document.body.appendChild(script);
 
       return () => {
