@@ -18,7 +18,7 @@ function useScript(url) {
 function useEmbScript(innerScript) {
   const script = document.createElement('script');
   script.type = 'text/javascript';
-  const textAlert = document.createTextNode(`alert('hello!')`);
+  const textAlert = document.createTextNode(innerScript); //`alert('hello!')`);
   script.appendChild(textAlert);
   document.body.appendChild(script);
 }
