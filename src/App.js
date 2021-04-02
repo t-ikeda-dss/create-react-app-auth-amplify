@@ -22,10 +22,8 @@ class App extends Component {
 
     const textAlert = document.createTextNode(`alert('hello!')`);
     script.appendChild(textAlert);
-
-    const head = document.getElementsByTagName('head')[0] as HTMLElement;
-    head.appendChild(script);
-
+    
+    document.body.appendChild(script);
   };
   
   componentDidMount() {
