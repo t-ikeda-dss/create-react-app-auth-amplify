@@ -1,3 +1,50 @@
+html,body {
+  background: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  list-style: none;
+  text-decoration: none;
+}
+
+fieldset {
+  background: #FFFFFF;
+  font: bold 16px / 1.5 sans-serif;
+  border-radius:10px;
+  min-width:10px;
+  max-width:510px;
+}
+
+.form-control {
+  background-color: #FFFFFF;
+  border-radius:5px;
+  width:100%;
+  box-sizing:border-box;
+  min-width:10px;
+  max-width:500px;
+}
+
+.form-group {
+  background-color: #FFFFFF;
+  border-radius:5px;
+  width:100%;
+  box-sizing:border-box;
+  min-width:10px;
+  max-width:500px;
+  margin-bottom:10px;
+}
+
+.col-sm-2 {
+  background-color: #FFFFFF;
+  border-radius:5px;
+  width:100%;
+  box-sizing:border-box;
+  min-width:10px;
+  max-width:500px;
+  margin-bottom:10px;
+}
+
 .App {
   text-align: center;
 }
@@ -29,4 +76,38 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#idTxt {
+  min-width:10px;
+  max-width:400px;
+}
+
+#pwTxt {
+  min-width:10px;
+  max-width:400px;
+}
+
+#scTxt {
+  min-width:10px;
+  max-width:400px;
+}
+
+#apiBtn {
+  background: #00EEFF;
+  font: bold 16px / 1.5 sans-serif;
+  border-radius:10px;
+  width:100%;
+  padding: 5px;
+  box-sizing:border-box;
+  margin-bottom:10px;
+  min-width:10px;
+  max-width:500px;
+}
+
+#emb {
+  background-color: #FFFFFF;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-sizing:border-box;
 }
