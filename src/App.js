@@ -11,7 +11,7 @@ Amplify.configure(aws_exports);
 
 class App extends Component {
   
-  const useScript = url => {
+  useScript = url => {
     useEffect(() => {
       const script = document.createElement('script');
 
