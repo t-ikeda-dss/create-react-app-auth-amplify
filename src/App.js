@@ -42,10 +42,26 @@ class App extends Component {
       .then( text => document.querySelector('#inner').innerHTML = text );
   }
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      authState: props.authState || null,
+      authData: props.authData || null
+    }
+  }
+  change = (state, data) => this.setState({ authState: state, authData: data })
+
   render() {
+    if (this.state.authState === 'signedIn') {
+      return (
+        <div id="inner"></div>
+      );
+    }
     return (
-      <div id="inner"></div>
-    );
+      <Authenticator hide={[SignIn]} onStateChange={this.change}>
+        <MySignIn {...this.state} />
+      </Authenticator>
+    )
   }
 }
 
