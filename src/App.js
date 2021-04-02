@@ -18,9 +18,12 @@ function useScript(url) {
 function useEmbScript(innerScript) {
   const script = document.createElement('script');
   script.type = 'text/javascript';
-  const textAlert = document.createTextNode(innerScript); //`alert('hello!')`);
-  script.appendChild(textAlert);
+  //const textAlert = document.createTextNode(innerScript); //`alert('hello!')`);
+  //script.appendChild(textAlert);
+  //document.body.appendChild(script);
+  script.innerHTML = "document.write('This is output by document.write()!')";
   document.body.appendChild(script);
+//  this.instance.appendChild(script);
 }
 
 class App extends Component {
