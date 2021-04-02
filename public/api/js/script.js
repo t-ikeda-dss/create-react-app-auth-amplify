@@ -11,8 +11,6 @@ const cognitoClientId = '30j2k1vbmbsc85hqbi7omo8pp6';
 
 // search API execution function
 function callSearchApi() {
-    // show message
-    alert('call callSearchApi');
 
   // local storage key name
   var localStorageKey = "CognitoIdentityServiceProvider.30j2k1vbmbsc85hqbi7omo8pp6.dss_ikeda.idToken";
