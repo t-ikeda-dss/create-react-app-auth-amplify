@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import file from './api/search.htm';
 import logo from './logo.svg';
 import './App.css';
-import { withAuthenticator } from 'aws-amplify-react'
+//--import { withAuthenticator } from 'aws-amplify-react'
+import { Authenticator, SignIn } from 'aws-amplify-react';
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
-
   
 function useScript(url) {
   const script = document.createElement('script');
@@ -15,6 +15,9 @@ function useScript(url) {
   document.body.appendChild(script);
 }
 
+const MySignIn = ({authState, authData}) => (
+ <div>login page</div>
+)
 class App extends Component {
   
   componentDidMount() {
