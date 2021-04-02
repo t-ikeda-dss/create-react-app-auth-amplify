@@ -11,6 +11,12 @@ Amplify.configure(aws_exports);
 
 class App extends Component {
   componentDidMount() {
+    //@@
+    const script = document.createElement("script");
+    script.src = "/api/js/script.js";
+    script.async = true;
+    document.body.appendChild(script);
+    //++
     fetch(file)
       .then( res => res.text() )
       .then( text => document.querySelector('#inner').innerHTML = text );
