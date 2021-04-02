@@ -15,21 +15,9 @@ function useScript(url) {
   document.body.appendChild(script);
 }
 
-function useEmbScript(innerScript) {
-  const script = document.createElement('script');
-  script.type = 'text/javascript';
-  //const textAlert = document.createTextNode(innerScript); //`alert('hello!')`);
-  //script.appendChild(textAlert);
-  //document.body.appendChild(script);
-  script.innerHTML = "innerScript";
-  document.body.appendChild(script);
-//  this.instance.appendChild(script);
-}
-
 class App extends Component {
   
   componentDidMount() {
-    //@@
     useScript('https://sdk.amazonaws.com/js/aws-sdk-2.7.19.min.js');
     useScript('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js');
     useScript('/api/js/script.js');
@@ -45,14 +33,7 @@ class App extends Component {
     useScript('/api/js/lib/apiGatewayCore/utils.js');
     useScript('/api/js/lib/CryptoJS/rollups/hmac-sha256.js');
     useScript('/api/js/lib/CryptoJS/rollups/sha256.js');
-    useEmbScript("$(function() { $(\'#apiBtn\').click(callSearchApi); });");
     
-    //@@
-    //--const script = document.createElement("script");
-    //--script.src = "/api/js/script.js";
-    //--script.async = true;
-    //--document.body.appendChild(script);
-    //++
     fetch(file)
       .then( res => res.text() )
       .then( text => document.querySelector('#inner').innerHTML = text );
