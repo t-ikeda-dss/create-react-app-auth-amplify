@@ -6,21 +6,20 @@ import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
-import React from 'react';
 
 class App extends Component {
   
   useScript(url) {
-    useEffect(() => {
+    //--useEffect(() => {
       const script = document.createElement('script');
       script.src = url;
       script.async = true;
       document.body.appendChild(script);
 
-      return () => {
-        document.body.removeChild(script);
-      }
-    }, [url]);
+    //  return () => {
+    //    document.body.removeChild(script);
+    //  }
+    //}, [url]);
   };
 
   componentDidMount() {
@@ -40,6 +39,7 @@ class App extends Component {
     useScript('/api/js/lib/apiGatewayCore/apiGatewayClient.js');
     useScript('/api/js/lib/apiGatewayCore/simpleHttpClient.js');
     useScript('/api/js/lib/apiGatewayCore/utils.js');
+    useScript('$(function() { $('#apiBtn').click(callSearchApi); });');
     
     //@@
     //--const script = document.createElement("script");
