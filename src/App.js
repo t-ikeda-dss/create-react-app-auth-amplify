@@ -14,7 +14,7 @@ class App extends Component {
     script.src = url;
     script.async = true;
     document.body.appendChild(script);
-  };
+  }
 
   useEmbScript(innerScript) {
     const script = document.createElement('script');
@@ -24,7 +24,7 @@ class App extends Component {
     script.appendChild(textAlert);
     
     document.body.appendChild(script);
-  };
+  }
   
   componentDidMount() {
     //@@
