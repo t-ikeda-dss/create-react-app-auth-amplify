@@ -30,7 +30,7 @@ export default class MySignUp extends SignUp {
             .then(() => this.changeState('confirmSignUp', username))
             .catch(err => this.error(err));
     }
-
+    
     showComponent(theme) {
         const { hide } = this.props;
         if (hide && hide.includes(SignUp)) { return null; }
