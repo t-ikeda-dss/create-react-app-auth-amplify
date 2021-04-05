@@ -39,11 +39,11 @@ export default class MySignUp extends SignUp {
 
         return (
             <FormSection theme={theme}>
-                <SectionHeader theme={theme}>{I18n.get('Sign Up Account')}</SectionHeader>
+                <SectionHeader theme={theme}>"サインアップ"</SectionHeader>
                 <SectionBody theme={theme}>
                 <InputRow
                         autoFocus
-                        placeholder={I18n.get('Username')}
+                        placeholder="ユーザー名入力"
                         theme={theme}
                         key="username"
                         name="username"
