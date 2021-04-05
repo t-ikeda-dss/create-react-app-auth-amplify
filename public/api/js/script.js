@@ -1,5 +1,5 @@
 // aws region
-const cogniteRegion = 'ap-northeast-1';
+const cognitoRegion = 'ap-northeast-1';
 // aws user pool id
 const cognitoUserPoolId = 'ap-northeast-1_S01Kqn7pX';
 // application client id
@@ -20,7 +20,7 @@ function callSearchApi() {
   const searchwd = document.getElementById('scTxt').value;
 
   // parameter initialization
-  AWS.config.region = region;
+  AWS.config.region = cognitoRegion;
   AWS.config.credentials = new AWS.CognitoIdentityCredentials({
     IdentityPoolId: cognitoUserPoolId,
   });
