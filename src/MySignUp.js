@@ -90,7 +90,7 @@ export default class MySignUp extends SignUp {
                     </div>
                     <div style={Object.assign({textAlign: 'right'}, theme.col6)}>
                         <Link theme={theme} onClick={() => this.changeState('signIn')}>
-                            {I18n.get('Sign In')}
+                            "サインアップ"
                         </Link>
                     </div>
                 </SectionFooter>
