@@ -1,6 +1,6 @@
 import React from 'react';
 import { ConfirmSignIn, ConfirmSignUp, ForgotPassword, SignIn, SignOut, VerifyContact, withAuthenticator } from 'aws-amplify-react';
-import MySignUp from './MySignup.js'
+import MySignup from './MySignup.js'
 
 
 export function withMyAuthenticator(Comp, includeGreetings=false) {
@@ -9,7 +9,7 @@ export function withMyAuthenticator(Comp, includeGreetings=false) {
       <SignOut/>,
       <ConfirmSignIn/>,
       <VerifyContact/>,
-      <MySignUp/>,
+      <MySignup/>,
       <ConfirmSignUp/>,
       <ForgotPassword/>
     ]);
