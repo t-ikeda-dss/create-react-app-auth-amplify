@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Amplify { Auth, I18n } from 'aws-amplify';
+import Amplify, { Auth, I18n } from 'aws-amplify';
 import {
     SignUp,
     FormSection,
