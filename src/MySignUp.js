@@ -76,7 +76,7 @@ export default class MySignUp extends SignUp {
                             {I18n.get('Confirm a Code')}
                         </Link>
                     </div>
-                    <div style={Object.assign({textAlign: 'right'}, theme.col6)}>
+                    <div style={theme.col6)}>
                         <Link theme={theme} onClick={() => this.changeState('signIn')}>
                             サインイン
                         </Link>
