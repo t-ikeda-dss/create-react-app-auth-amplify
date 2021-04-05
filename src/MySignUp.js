@@ -24,8 +24,8 @@ export default class MySignUp extends SignUp {
             password: password,
             attributes:{
                 email: email,
-                phone_number: phone_number,
-                address: address
+            //--    phone_number: phone_number,
+            //--    address: address
             }
         }
         Auth.signUp(param)
@@ -62,20 +62,6 @@ export default class MySignUp extends SignUp {
                         theme={theme}
                         key="email"
                         name="email"
-                        onChange={this.handleInputChange}
-                    />
-                    <InputRow
-                        placeholder={I18n.get('Phone Number')}
-                        theme={theme}
-                        key="phone_number"
-                        name="phone_number"
-                        onChange={this.handleInputChange}
-                    />
-                    <InputRow
-                        placeholder={I18n.get('address')}
-                        theme={theme}
-                        key="address"
-                        name="address"
                         onChange={this.handleInputChange}
                     />
                     <ButtonRow onClick={this.signUp} theme={theme}>
