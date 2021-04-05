@@ -79,7 +79,7 @@ export default class MySignUp extends SignUp {
                         onChange={this.handleInputChange}
                     />
                     <ButtonRow onClick={this.signUp} theme={theme}>
-                        {I18n.get('Sign Up')}
+                        "サインアップ"
                     </ButtonRow>
                 </SectionBody>
                 <SectionFooter theme={theme}>
