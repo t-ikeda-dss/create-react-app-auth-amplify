@@ -9,7 +9,7 @@ export function withMyAuthenticator(Comp, includeGreetings=false) {
       <SignOut/>,
       <ConfirmSignIn/>,
       <VerifyContact/>,
-      <MySignup/>,
+      <SignUp/>,
       <ConfirmSignUp/>,
       <ForgotPassword/>
     ]);
