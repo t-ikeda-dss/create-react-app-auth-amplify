@@ -13,7 +13,7 @@ import {
 } from 'aws-amplify-react';
 
 
-export default class MySignup extends SignUp {
+export default class MySignUp extends SignUp {
 
     signUp() {
         const { username, password, email, phone_number, address } = this.inputs;
