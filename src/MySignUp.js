@@ -1,6 +1,10 @@
+import React, { Component } from 'react';
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Amplify, { Auth } from 'aws-amplify';
+import aws_exports from './aws-exports';
+Amplify.configure(aws_exports);
 
 import { Auth, I18n } from 'aws-amplify';
 import {
