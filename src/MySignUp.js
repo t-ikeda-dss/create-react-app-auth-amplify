@@ -39,7 +39,7 @@ export default class MySignUp extends SignUp {
 
         return (
             <FormSection theme={theme}>
-                <SectionHeader theme={theme}>"サインアップ"</SectionHeader>
+                <SectionHeader theme={theme}>サインアップ</SectionHeader>
                 <SectionBody theme={theme}>
                 <InputRow
                         autoFocus
@@ -79,7 +79,7 @@ export default class MySignUp extends SignUp {
                         onChange={this.handleInputChange}
                     />
                     <ButtonRow onClick={this.signUp} theme={theme}>
-                        "サインアップ"
+                        サインアップ
                     </ButtonRow>
                 </SectionBody>
                 <SectionFooter theme={theme}>
@@ -90,7 +90,7 @@ export default class MySignUp extends SignUp {
                     </div>
                     <div style={Object.assign({textAlign: 'right'}, theme.col6)}>
                         <Link theme={theme} onClick={() => this.changeState('signIn')}>
-                            "サインアップ"
+                            サインイン
                         </Link>
                     </div>
                 </SectionFooter>
