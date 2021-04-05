@@ -66,7 +66,7 @@ export default class MySignUp extends SignUp {
                         name="email"
                         onChange={this.handleInputChange}
                     />
-                    <ButtonRow onClick={this.signUp} theme={theme}>
+                    <Button onClick={this.signUp} theme={theme}>
                         サインアップ
                     </ButtonRow>
                 </SectionBody>
@@ -76,7 +76,7 @@ export default class MySignUp extends SignUp {
                             {I18n.get('Confirm a Code')}
                         </Link>
                     </div>
-                    <div style={theme.col6)}>
+                    <div style={theme.col6}>
                         <Link theme={theme} onClick={() => this.changeState('signIn')}>
                             サインイン
                         </Link>
