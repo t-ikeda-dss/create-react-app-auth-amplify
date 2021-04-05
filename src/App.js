@@ -3,8 +3,8 @@ import file from './api/search.htm';
 import logo from './logo.svg';
 import './App.css';
 //--import { withAuthenticator } from 'aws-amplify-react';
-import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
-//--import { withMyAuthenticator } from './MyAuth';
+//--import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
+import { withMyAuthenticator } from './MyAuth';
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
@@ -42,11 +42,12 @@ class App extends Component {
 
   render() {
     return (
+      <div><SignOut /></div>
       <div id="inner"></div>
     );
   }
 }
 
 //--export default withAuthenticator(App, true);
-export default AmplifyAuthenticator(App, true);
-//--export default withMyAuthenticator(App, true);
+//--export default AmplifyAuthenticator(App, true);
+export default withMyAuthenticator(App, true);
