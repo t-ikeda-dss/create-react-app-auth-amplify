@@ -3,7 +3,7 @@ const cognitoRegion = 'ap-northeast-1';
 // aws user pool id
 const cognitoUserPoolId = 'ap-northeast-1_S01Kqn7pX';
 // application client id
-//--const cognitoClientId = '30j2k1vbmbsc85hqbi7omo8pp6';
+const cognitoClientId = '30j2k1vbmbsc85hqbi7omo8pp6';
 
 //----------------------------------------------------------------------------------------
 // Functions called from HTML
@@ -12,10 +12,13 @@ const cognitoUserPoolId = 'ap-northeast-1_S01Kqn7pX';
 // search API execution function
 function callSearchApi() {
 
-  // local storage key name
-  var localStorageKey = "CognitoIdentityServiceProvider.30j2k1vbmbsc85hqbi7omo8pp6.dss_ikeda.idToken";
-  // get cognito accesss token
-  var idToken = localStorage.getItem( localStorageKey );
+  // get user name
+  var userNameKey = "CognitoIdentityServiceProvider." + cognitoClientId + ".LastAuthUser";
+  var userName = localStorage.getItem( userNameKey );
+  // get cognito id token
+  var tokenKey = "CognitoIdentityServiceProvider." + cognitoClientId + "." + userName + ".idToken";
+  var idToken = localStorage.getItem( tokenKey );
+  
   // specified search word
   const searchwd = document.getElementById('scTxt').value;
 
