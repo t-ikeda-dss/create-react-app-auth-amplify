@@ -3,7 +3,7 @@ import file from './api/search.htm';
 import logo from './logo.svg';
 import './App.css';
 //--import { withAuthenticator } from 'aws-amplify-react'
-import { AmplifyAuthenticator } from 'aws-amplify-react'
+import { AmplifyAuthenticator } from 'aws-amplify'
 //--import { withMyAuthenticator } from './MyAuth'
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
