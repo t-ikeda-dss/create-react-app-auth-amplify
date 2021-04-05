@@ -12,6 +12,7 @@ import {
     ButtonRow,
     Link,
 } from 'aws-amplify-react';
+import theme from "./theme";
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 
@@ -66,7 +67,7 @@ export default class MySignUp extends SignUp {
                         name="email"
                         onChange={this.handleInputChange}
                     />
-                    <Button onClick={this.signUp} theme={theme}>
+                    <ButtonRow onClick={this.signUp} theme={theme}>
                         サインアップ
                     </ButtonRow>
                 </SectionBody>
