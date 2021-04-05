@@ -12,7 +12,7 @@ import {
     ButtonRow,
     Link,
 } from 'aws-amplify-react';
-import theme from "./theme";
+//--import theme from "./theme";
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 
