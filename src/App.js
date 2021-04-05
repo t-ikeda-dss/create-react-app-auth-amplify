@@ -42,8 +42,7 @@ class App extends Component {
 
   render() {
     return (
-      <div><SignOut /></div>
-      <div id="inner"></div>
+      <div id="inner"><SignOut /></div>
     );
   }
 }
