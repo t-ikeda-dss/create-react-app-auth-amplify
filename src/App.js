@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import file from './api/search.htm';
 import logo from './logo.svg';
 import './App.css';
-//--import { withAuthenticator } from 'aws-amplify-react'
-import { withAuthenticator } from '@aws-amplify/ui-react';
+import { withAuthenticator } from 'aws-amplify-react'
+//--import { withAuthenticator } from '@aws-amplify/ui-react';
 //--import { withMyAuthenticator } from './MyAuth'
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
