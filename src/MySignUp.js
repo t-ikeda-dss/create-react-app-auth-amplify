@@ -33,7 +33,7 @@ export default class MySignUp extends SignUp {
     
     showComponent(theme) {
         const { hide } = this.props;
-        if (hide && hide.includes(SignUp)) { return null; }
+        if (hide && hide.includes(MySignUp)) { return null; }
 
         return (
             <FormSection theme={theme}>
