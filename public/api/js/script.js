@@ -20,11 +20,10 @@ function callSearchApi() {
   const searchwd = document.getElementById('scTxt').value;
 
   // parameter initialization
-  //--var AWS = require("aws-sdk");
-  AWS.config.region = cogniteRegion;
-  AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: cognitoUserPoolId,
-  });
+  //--AWS.config.region = cogniteRegion;
+  //--AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+  //--  IdentityPoolId: cognitoUserPoolId,
+  //--});
 
   // authentication parameters
   var apigClient = apigClientFactory.newClient({
