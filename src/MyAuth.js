@@ -8,7 +8,7 @@ export function withMyAuthenticator(Comp, includeGreetings=false) {
       <SignOut/>,
       <ConfirmSignIn/>,
       <VerifyContact/>,
-      <MySignUp/>,
+      <MySignUp override={'SignUp'}/>,
       <ConfirmSignUp/>,
       <ForgotPassword/>
     ]);
