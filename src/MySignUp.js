@@ -40,9 +40,9 @@ export default class MySignUp extends SignUp {
 
         return (
             <FormSection theme={theme}>
+              <div className="App">
                 <SectionHeader theme={theme}>サインアップ</SectionHeader>
                 <SectionBody theme={theme}>
-                  <div className="App">
                     <InputRow
                         autoFocus
                         placeholder="ユーザー名入力"
@@ -69,7 +69,6 @@ export default class MySignUp extends SignUp {
                     <ButtonRow onClick={this.signUp} theme={theme}>
                         サインアップ
                     </ButtonRow>
-                  </div>
                 </SectionBody>
                 <SectionFooter theme={theme}>
                     <div style={theme.col6}>
@@ -83,6 +82,7 @@ export default class MySignUp extends SignUp {
                         </Link>
                     </div>
                 </SectionFooter>
+              </div>
             </FormSection>
         )
     }
