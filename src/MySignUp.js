@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Amplify from 'aws-amplify';
-import aws_exports from './aws-exports';
-Amplify.configure(aws_exports);
-
-import { Auth, I18n } from 'aws-amplify';
+import Amplify { Auth, I18n } from 'aws-amplify';
 import {
     SignUp,
     FormSection,
@@ -16,6 +12,8 @@ import {
     ButtonRow,
     Link,
 } from 'aws-amplify-react';
+import aws_exports from './aws-exports';
+Amplify.configure(aws_exports);
 
 
 export default class MySignUp extends SignUp {
