@@ -42,7 +42,7 @@ class App extends Component {
 
   render() {
     return (
-      <div id="inner"><SignOut /></div>
+      <div id="inner"></div>
     );
   }
 }
