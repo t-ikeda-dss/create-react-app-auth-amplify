@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConfirmSignIn, ConfirmSignUp, ForgotPassword, SignIn, SignOut, VerifyContact, withAuthenticator } from 'aws-amplify-react';
+import { ConfirmSignIn, ConfirmSignUp, ForgotPassword, SignIn, SignOut, VerifyContact, SignUp, withAuthenticator } from 'aws-amplify-react';
 import MySignup from './MySignup.js'
 
 
