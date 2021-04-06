@@ -13,7 +13,7 @@ import {
     Link,
 } from 'aws-amplify-react';
 //--import theme from "./theme";
-import AmplifyTheme, { AmplifyThemeType } from 'aws-amplify-react';
+import { AmplifyThemeType } from 'AmplifyTheme';
 //--import aws_exports from './aws-exports';
 import awsconfig from './aws-exports';
 //--Amplify.configure(aws_exports);
