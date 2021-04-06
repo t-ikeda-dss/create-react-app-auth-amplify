@@ -13,7 +13,7 @@ Amplify.configure(aws_exports);
 const myTheme = {
     ...AmplifyTheme,
     BackgroundColor: { color: 'blue',backgroundColor: 'blue' },
-    button: { color: 'blue',backgroundColor: 'blue' },
+    button: { color: 'green',backgroundColor: 'green' },
     amazonSignInButton: { color: 'blue',backgroundColor: 'blue' },
     signInButton: { backgroundColor: 'blue' , color: 'blue'}
 };
