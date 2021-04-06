@@ -9,6 +9,13 @@ import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 import { AmplifyTheme } from 'aws-amplify-react';
 
+const myTheme = {
+    ...AmplifyTheme,
+    BackgroundColor: { color: 'blue',backgroundColor: 'blue' },
+    button: { color: 'blue',backgroundColor: 'blue' },
+    amazonSignInButton: { color: 'blue',backgroundColor: 'blue' },
+    signInButton: { backgroundColor: 'blue' , color: 'blue'}
+};
   
 function useScript(url) {
   const script = document.createElement('script');
@@ -51,4 +58,4 @@ class App extends Component {
   }
 }
 
-export default withMyAuthenticator(App, true, theme={AmplifyTheme});
+export default withMyAuthenticator(App, true, myTheme);
