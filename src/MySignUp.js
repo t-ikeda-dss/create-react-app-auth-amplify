@@ -12,17 +12,6 @@ import {
     ButtonRow,
     Link,
 } from 'aws-amplify-react';
-import { 
-    FormField, 
-    Input, 
-    InputLabel, 
-    Hint, 
-    //--SectionFooter, 
-    SectionFooterPrimaryContent, 
-    Button, 
-    SectionFooterSecondaryContent 
-} from 'aws-amplify-react/src/Amplify-UI/AAmplify-UI-Components-React';
-
 //--import theme from "./theme";
 //--import { AmplifyTheme } from 'aws-amplify-react';
 //--import aws_exports from './aws-exports';
