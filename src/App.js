@@ -36,7 +36,7 @@ class App extends Component {
     useScript('/api/js/lib/CryptoJS/rollups/sha256.js');
     sessionStorage.setItem( "aws_region" , aws_exports.aws_project_region );
     sessionStorage.setItem( "aws_poolid" , aws_exports.aws_user_pools_id );
-    sessionStorage.setItem( "aws_clilid" , aws_exports.aws_user_pools_web_client_id );
+    sessionStorage.setItem( "aws_clitid" , aws_exports.aws_user_pools_web_client_id );
     
     fetch(file)
       .then( res => res.text() )
