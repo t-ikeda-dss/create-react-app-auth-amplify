@@ -8,8 +8,8 @@ import {
     SectionHeader,
     SectionBody,
     SectionFooter,
-    Input,
-    Button,
+    InputRow,
+    ButtonRow,
     Link,
 } from 'aws-amplify-react';
 //--import theme from "./theme";
@@ -47,7 +47,7 @@ export default class MySignUp extends SignUp {
               <div className="App">
                 <SectionHeader theme={theme}>サインアップ</SectionHeader>
                 <SectionBody theme={theme}>
-                    <Input 
+                    <input 
                         autoFocus
                         placeholder="ユーザー名入力"
                         theme={theme}
@@ -55,7 +55,7 @@ export default class MySignUp extends SignUp {
                         name="username"
                         onChange={this.handleInputChange}
                     />
-                    <Input
+                    <input
                         placeholder="パスワード"
                         theme={theme}
                         type="password"
@@ -63,16 +63,16 @@ export default class MySignUp extends SignUp {
                         name="password"
                         onChange={this.handleInputChange}
                     />
-                    <Input
+                    <input
                         placeholder="メールアドレス"
                         theme={theme}
                         key="email"
                         name="email"
                         onChange={this.handleInputChange}
                     />
-                    <Button onClick={this.signUp} theme={theme}>
+                    <button onClick={this.signUp} theme={theme}>
                         サインアップ
-                    </Button>
+                    </button>
                 </SectionBody>
                 <SectionFooter theme={theme}>
                     <div style={theme.col6}>
