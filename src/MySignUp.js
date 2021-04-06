@@ -8,6 +8,13 @@ import {
     SectionHeader,
     SectionBody,
     SectionFooter,
+    FormField,
+    InputLabel,
+    PhoneField,
+    SectionFooterPrimaryContent,
+    SectionFooterSecondaryContent,
+    Input,
+    Button,
     InputRow,
     ButtonRow,
     Link,
@@ -49,11 +56,11 @@ export default class MySignUp extends SignUp {
 		}
 		this.sortFields();
 		return (
-			<FormSection theme={theme} data-test={auth.signUp.section}>
-				<SectionHeader theme={theme} data-test={auth.signUp.headerSection}>
+			<FormSection theme={theme} data-test={Auth.signUp.section}>
+				<SectionHeader theme={theme} data-test={this.signUp.headerSection}>
 					{I18n.get(this.header)}
 				</SectionHeader>
-				<SectionBody theme={theme} data-test={auth.signUp.bodySection}>
+				<SectionBody theme={theme} data-test={Auth.signUp.bodySection}>
 					{this.signUpFields.map(field => {
 						return field.key !== 'phone_number' ? (
 							<FormField theme={theme} key={field.key}>
@@ -74,7 +81,7 @@ export default class MySignUp extends SignUp {
 									name={field.key}
 									key={field.key}
 									onChange={this.handleInputChange}
-									data-test={auth.signUp.nonPhoneNumberInput}
+									data-test={Auth.signUp.nonPhoneNumberInput}
 								/>
 							</FormField>
 						) : (
@@ -90,13 +97,13 @@ export default class MySignUp extends SignUp {
 						);
 					})}
 				</SectionBody>
-				<SectionFooter theme={theme} data-test={auth.signUp.footerSection}>
+				<SectionFooter theme={theme} data-test={Auth.signUp.footerSection}>
 					<SectionFooterPrimaryContent theme={theme}>
 						<Button
 							disabled={this.state.requestPending}
 							onClick={this.signUp}
 							theme={theme}
-							data-test={auth.signUp.createAccountButton}
+							data-test={Auth.signUp.createAccountButton}
 						>
 							{I18n.get('Create Account')}
 						</Button>
@@ -106,7 +113,7 @@ export default class MySignUp extends SignUp {
 						<Link
 							theme={theme}
 							onClick={() => this.changeState('signIn')}
-							data-test={auth.signUp.signInLink}
+							data-test={Auth.signUp.signInLink}
 						>
 							{I18n.get('Sign in')}
 						</Link>
