@@ -44,7 +44,7 @@ export default class MySignUp extends SignUp {
               <div className="App">
                 <SectionHeader theme={theme}>サインアップ</SectionHeader>
                 <SectionBody theme={theme}>
-                    <TextInput 
+                    <input 
                         autoFocus
                         placeholder="ユーザー名入力"
                         theme={theme}
