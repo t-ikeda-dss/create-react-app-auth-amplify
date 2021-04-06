@@ -83,7 +83,7 @@ export default class MySignUp extends SignUp {
                     />
                     <Button onClick={this.signUp} theme={AmplifyTheme}>
                         サインアップ
-                    </button>
+                    </Button>
                 </SectionBody>
                 <SectionFooter theme={theme}>
                     <div style={theme.col6}>
