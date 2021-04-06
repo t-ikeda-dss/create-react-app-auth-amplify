@@ -15,6 +15,7 @@ function callSearchApi() {
   var awsRegion = sessionStorage.getItem( "aws_region" );
   var awsPoolId = sessionStorage.getItem( "aws_poolid" );
   var awsclitid = sessionStorage.getItem( "aws_clitid" );
+  alert(awsRegion);
   alert(awsPoolId);
   alert(awsclitid);
   // get user name
