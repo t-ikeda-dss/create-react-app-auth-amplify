@@ -13,7 +13,7 @@ import {
     Link,
 } from 'aws-amplify-react';
 //--import theme from "./theme";
-import { AmplifyTheme } from 'aws-amplify-react';
+import AmplifyTheme, { AmplifyThemeType } from 'aws-amplify-react';
 //--import aws_exports from './aws-exports';
 import awsconfig from './aws-exports';
 //--Amplify.configure(aws_exports);
@@ -72,7 +72,7 @@ export default class MySignUp extends SignUp {
                         name="email"
                         onChange={this.handleInputChange}
                     />
-                    <button data-component="Button" class="Button" onClick={this.signUp} theme={AmplifyTheme}>
+                    <button data-component="Button" class="Button" onClick={this.signUp} theme={AmplifyThemeType}>
                         サインアップ
                     </button>
                 </SectionBody>
@@ -92,53 +92,4 @@ export default class MySignUp extends SignUp {
             </FormSection>
         )
     }
-}
-
-const styles = {
-  signUpHeader: {
-    textAlign: 'left',
-    margin: '0px 0px 20px'
-  },
-  button: {
-    padding: '10px 60px',
-    backgroundColor: '#ffb102',
-    cursor: 'pointer',
-    borderRadius: '30px',
-    marginTop: 10,
-    marginBottom: 10,
-    ':hover': {
-      backgroundColor: '#ffbb22'
-    }
-  },
-  buttonText: {
-    margin: 0,
-    color: 'white'
-  },
-  container: {
-    flex: 1,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    paddingTop: '15px',
-  },
-  formContainer: {
-    padding: 20,
-    width: 400,
-    display: 'flex',
-    flexDirection: 'column',
-    boxShadow: "0px 0px 2px rgba(0, 0, 0, .2)",
-    borderRadius: 20
-  },
-  input: {
-    height: 40,
-    marginBottom: '10px',
-    border: 'none',
-    outline: 'none',
-    borderBottom: '2px solid #ffb102',
-    fontSize: '16px',
-    '::placeholder': {
-      color: 'rgba(0, 0, 0, .3)'
-    }
-  },
 }
