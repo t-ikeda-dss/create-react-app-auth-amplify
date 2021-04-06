@@ -47,7 +47,7 @@ export default class MySignUp extends SignUp {
               <div className="App">
                 <SectionHeader theme={theme}>サインアップ</SectionHeader>
                 <SectionBody theme={theme}>
-                    <input 
+                    <Input 
                         autoFocus
                         placeholder="ユーザー名入力"
                         theme={theme}
@@ -55,7 +55,7 @@ export default class MySignUp extends SignUp {
                         name="username"
                         onChange={this.handleInputChange}
                     />
-                    <InputRow
+                    <Input
                         placeholder="パスワード"
                         theme={theme}
                         type="password"
@@ -63,14 +63,14 @@ export default class MySignUp extends SignUp {
                         name="password"
                         onChange={this.handleInputChange}
                     />
-                    <InputRow
+                    <Input
                         placeholder="メールアドレス"
                         theme={theme}
                         key="email"
                         name="email"
                         onChange={this.handleInputChange}
                     />
-                    <ButtonRow onClick={this.signUp} theme={theme}>
+                    <Button onClick={this.signUp} theme={theme}>
                         サインアップ
                     </ButtonRow>
                 </SectionBody>
