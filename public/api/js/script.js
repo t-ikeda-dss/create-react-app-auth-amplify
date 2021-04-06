@@ -4,6 +4,8 @@ const cognitoRegion = 'ap-northeast-1';
 const cognitoUserPoolId = 'ap-northeast-1_S01Kqn7pX';
 // application client id
 const cognitoClientId = '30j2k1vbmbsc85hqbi7omo8pp6';
+// 
+import awsconfig from './aws-exports';
 
 //----------------------------------------------------------------------------------------
 // Functions called from HTML
@@ -12,8 +14,8 @@ const cognitoClientId = '30j2k1vbmbsc85hqbi7omo8pp6';
 // search API execution function
 function callSearchApi() {
 
-  alert(aws_exports.aws_project_region);
-  alert(aws_exports.aws_user_pools_web_client_id);
+  alert(awsconfig.aws_project_region);
+  alert(awsconfig.aws_user_pools_web_client_id);
   // get user name
   var userNameKey = "CognitoIdentityServiceProvider." + cognitoClientId + ".LastAuthUser";
   var userName = localStorage.getItem( userNameKey );
