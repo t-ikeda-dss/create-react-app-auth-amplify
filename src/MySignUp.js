@@ -44,7 +44,7 @@ export default class MySignUp extends SignUp {
         if (hide && hide.includes(MySignUp)) { return null; }
 
         return (
-            <FormSection theme={theme}>
+            <FormSection data-component="FormSection" theme={theme}>
               <div className="App">
                 <SectionHeader theme={theme}>サインアップ</SectionHeader>
                 <SectionBody theme={theme}>
@@ -55,6 +55,7 @@ export default class MySignUp extends SignUp {
                         key="username"
                         name="username"
                         onChange={this.handleInputChange}
+                        data-component="InputRow"
                     />
                     <InputRow
                         placeholder="パスワード"
@@ -71,7 +72,7 @@ export default class MySignUp extends SignUp {
                         name="email"
                         onChange={this.handleInputChange}
                     />
-                    <ButtonRow class="Button" onClick={this.signUp} theme={theme}>
+                    <ButtonRow data-component="Button" class="Button" onClick={this.signUp} theme={theme}>
                         サインアップ
                     </ButtonRow>
                 </SectionBody>
