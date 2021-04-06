@@ -7,6 +7,7 @@ import { withMyAuthenticator } from './MyAuth';
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
+import { AmplifyTheme } from 'aws-amplify-react';
 
   
 function useScript(url) {
@@ -50,4 +51,4 @@ class App extends Component {
   }
 }
 
-export default withMyAuthenticator(App, true);
+export default withMyAuthenticator(App, true, theme={AmplifyTheme});
