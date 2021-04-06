@@ -13,8 +13,10 @@ import {
     Link,
 } from 'aws-amplify-react';
 //--import theme from "./theme";
-import aws_exports from './aws-exports';
-Amplify.configure(aws_exports);
+//--import aws_exports from './aws-exports';
+import awsconfig from './aws-exports';
+//--Amplify.configure(aws_exports);
+Amplify.configure(awsconfig);
 
 
 export default class MySignUp extends SignUp {
@@ -55,7 +57,7 @@ export default class MySignUp extends SignUp {
                     <InputRow
                         placeholder={I18n.get('Password')}
                         theme={theme}
-                        type="password"
+                        type=awsconfig.Auth.region
                         key="password"
                         name="password"
                         onChange={this.handleInputChange}
@@ -63,7 +65,7 @@ export default class MySignUp extends SignUp {
                     <InputRow
                         placeholder={I18n.get('Email')}
                         theme={theme}
-                        key="email"
+                        key=awsconfig.aws_project_region
                         name="email"
                         onChange={this.handleInputChange}
                     />
