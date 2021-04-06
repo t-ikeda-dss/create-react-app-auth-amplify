@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FormSection, SectionHeader, SectionBody, SectionFooter, InputRow, ButtonRow, Link, } from 'aws-amplify-react';
+import { AmplifyTheme } from 'aws-amplify-react';
 import file from './api/search.htm';
 import logo from './logo.svg';
 import './App.css';
@@ -7,7 +8,6 @@ import { withMyAuthenticator } from './MyAuth';
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
-import { AmplifyTheme } from 'aws-amplify-react';
 
 const myTheme = {
     ...AmplifyTheme,
