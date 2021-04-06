@@ -1,9 +1,6 @@
-// aws region
-const cognitoRegion = 'ap-northeast-1';
-// aws user pool id
-const cognitoUserPoolId = 'ap-northeast-1_S01Kqn7pX';
-// application client id
-const cognitoClientId = '30j2k1vbmbsc85hqbi7omo8pp6';
+//
+//
+//
 
 //----------------------------------------------------------------------------------------
 // Functions called from HTML
@@ -12,26 +9,25 @@ const cognitoClientId = '30j2k1vbmbsc85hqbi7omo8pp6';
 // search API execution function
 function callSearchApi() {
 
+  // 
   var awsRegion = sessionStorage.getItem( "aws_region" );
   var awsPoolId = sessionStorage.getItem( "aws_poolid" );
   var awsclitid = sessionStorage.getItem( "aws_clitid" );
-  alert(awsRegion);
-  alert(awsPoolId);
-  alert(awsclitid);
+
   // get user name
-  var userNameKey = "CognitoIdentityServiceProvider." + cognitoClientId + ".LastAuthUser";
+  var userNameKey = "CognitoIdentityServiceProvider." + awsclitid + ".LastAuthUser";
   var userName = localStorage.getItem( userNameKey );
   // get cognito id token
-  var tokenKey = "CognitoIdentityServiceProvider." + cognitoClientId + "." + userName + ".idToken";
+  var tokenKey = "CognitoIdentityServiceProvider." + awsclitid + "." + userName + ".idToken";
   var idToken = localStorage.getItem( tokenKey );
   
   // specified search word
   const searchwd = document.getElementById('scTxt').value;
 
   // parameter initialization
-  AWS.config.region = cognitoRegion;
+  AWS.config.region = awsRegion;
   AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: cognitoUserPoolId,
+    IdentityPoolId: awsPoolId,
   });
 
   // authentication parameters
