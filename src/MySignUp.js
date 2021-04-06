@@ -13,10 +13,10 @@ import {
     Link,
 } from 'aws-amplify-react';
 import {
-	FormSection,
-	SectionHeader,
-	SectionBody,
-	SectionFooter,
+	//FormSection,
+	//SectionHeader,
+	//SectionBody,
+	//SectionFooter,
 	FormField,
 	Input,
 	InputLabel,
