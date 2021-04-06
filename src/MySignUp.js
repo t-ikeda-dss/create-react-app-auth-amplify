@@ -13,7 +13,7 @@ import {
     Link,
 } from 'aws-amplify-react';
 //--import theme from "./theme";
-import { AmplifyThemeType } from 'AmplifyTheme';
+import { AmplifyTheme } from 'aws-amplify-react';
 //--import aws_exports from './aws-exports';
 import awsconfig from './aws-exports';
 //--Amplify.configure(aws_exports);
@@ -67,12 +67,12 @@ export default class MySignUp extends SignUp {
                     />
                     <input
                         placeholder="メールアドレス"
-                        theme={AmplifyTheme}
+                        theme={theme}
                         key="email"
                         name="email"
                         onChange={this.handleInputChange}
                     />
-                    <button data-component="Button" class="Button" onClick={this.signUp} theme={AmplifyThemeType}>
+                    <button data-component="Button" class="Button" onClick={this.signUp} theme={theme}>
                         サインアップ
                     </button>
                 </SectionBody>
