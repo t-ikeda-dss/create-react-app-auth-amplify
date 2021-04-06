@@ -21,7 +21,7 @@ import {
 	Input,
 	InputLabel,
 	Button,
-	Link,
+	//Link,
 	SectionFooterPrimaryContent,
 	SectionFooterSecondaryContent,
 } from 'aws-amplify-react/Amplify-UI/Amplify-UI-Components-React';
