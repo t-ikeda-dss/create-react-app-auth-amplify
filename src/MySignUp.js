@@ -55,7 +55,7 @@ export default class MySignUp extends SignUp {
                         onChange={this.handleInputChange}
                     />
                     <InputRow
-                        placeholder=awsconfig.Auth.region
+                        placeholder={awsconfig.Auth.region}
                         theme={theme}
                         type="password"
                         key="password"
@@ -63,7 +63,7 @@ export default class MySignUp extends SignUp {
                         onChange={this.handleInputChange}
                     />
                     <InputRow
-                        placeholder=awsconfig.aws_project_region
+                        placeholder={awsconfig.aws_project_region}
                         theme={theme}
                         key="email"
                         name="email"
