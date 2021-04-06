@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { css } from 'glamor'
 import logo from './logo.svg';
 import './App.css';
 import Amplify, { Auth, I18n } from 'aws-amplify';
@@ -8,13 +9,6 @@ import {
     SectionHeader,
     SectionBody,
     SectionFooter,
-    //FormField,
-    InputLabel,
-    PhoneField,
-    SectionFooterPrimaryContent,
-    SectionFooterSecondaryContent,
-    Input,
-    Button,
     InputRow,
     ButtonRow,
     Link,
@@ -46,80 +40,107 @@ export default class MySignUp extends SignUp {
             .catch(err => this.error(err));
     }
 
-	showComponent(theme): React.ReactNode {
-		const { hide } = this.props;
-		if (hide && hide.includes(SignUp)) {
-			return null;
-		}
-		if (this.checkCustomSignUpFields()) {
-			this.signUpFields = this.props.signUpConfig.signUpFields;
-		}
-		this.sortFields();
-		return (
-			<FormSection theme={theme} data-test={Auth.signUp.section}>
-				<SectionHeader theme={theme} data-test={this.signUp.headerSection}>
-					{I18n.get(this.header)}
-				</SectionHeader>
-				<SectionBody theme={theme} data-test={Auth.signUp.bodySection}>
-					{this.signUpFields.map(field => {
-						return field.key !== 'phone_number' ? (
-							<formfield theme={theme} key={field.key}>
-								{field.required ? (
-									<InputLabel theme={theme}>
-										{I18n.get(field.label)} *
-									</InputLabel>
-								) : (
-									<InputLabel theme={theme}>{I18n.get(field.label)}</InputLabel>
-								)}
-								<Input
-									autoFocus={
-										this.signUpFields.findIndex(f => f.key === field.key) === 0
-									}
-									placeholder={I18n.get(field.placeholder)}
-									theme={theme}
-									type={field.type}
-									name={field.key}
-									key={field.key}
-									onChange={this.handleInputChange}
-									data-test={Auth.signUp.nonPhoneNumberInput}
-								/>
-							</formfield>
-						) : (
-							<PhoneField
-								theme={theme}
-								required={field.required}
-								defaultDialCode={this.getDefaultDialCode()}
-								label={field.label}
-								placeholder={field.placeholder}
-								onChangeText={this.onPhoneNumberChanged}
-								key="phone_number"
-							/>
-						);
-					})}
-				</SectionBody>
-				<SectionFooter theme={theme} data-test={Auth.signUp.footerSection}>
-					<SectionFooterPrimaryContent theme={theme}>
-						<Button
-							disabled={this.state.requestPending}
-							onClick={this.signUp}
-							theme={theme}
-							data-test={Auth.signUp.createAccountButton}
-						>
-							{I18n.get('Create Account')}
-						</Button>
-					</SectionFooterPrimaryContent>
-					<SectionFooterSecondaryContent theme={theme}>
-						{I18n.get('Have an account? ')}
-						<Link
-							theme={theme}
-							onClick={() => this.changeState('signIn')}
-							data-test={Auth.signUp.signInLink}
-						>
-							{I18n.get('Sign in')}
-						</Link>
-					</SectionFooterSecondaryContent>
-				</SectionFooter>
-			</FormSection>
-		);
-	}
+    showComponent(theme) {
+        const { hide } = this.props;
+        if (hide && hide.includes(MySignUp)) { return null; }
+
+        return (
+            <FormSection data-component="FormSection" theme={theme}>
+              <div className="App">
+                <SectionHeader theme={theme}>サインアップ</SectionHeader>
+                <SectionBody theme={theme}>
+                    <input 
+                        autoFocus
+                        placeholder="ユーザー名入力"
+                        theme={theme}
+                        key="username"
+                        name="username"
+                        onChange={this.handleInputChange}
+                        data-component="InputRow"
+                    />
+                    <input
+		        {...css(styles.input)}
+                        placeholder="パスワード"
+                        theme={theme}
+                        type="password"
+                        key="password"
+                        name="password"
+                        onChange={this.handleInputChange}
+                    />
+                    <input
+                        placeholder="メールアドレス"
+                        theme={theme}
+                        key="email"
+                        name="email"
+                        onChange={this.handleInputChange}
+                    />
+                    <button data-component="Button" class="Button" onClick={this.signUp} theme={AmplifyTheme}>
+                        サインアップ
+                    </button>
+                </SectionBody>
+                <SectionFooter theme={theme}>
+                    <div style={theme.col6}>
+                        <Link theme={theme} onClick={() => this.changeState('confirmSignUp')}>
+                            {I18n.get('Confirm a Code')}
+                        </Link>
+                    </div>
+                    <div style={theme.col6}>
+                        <Link theme={theme} onClick={() => this.changeState('signIn')}>
+                            サインイン
+                        </Link>
+                    </div>
+                </SectionFooter>
+              </div>
+            </FormSection>
+        )
+    }
+}
+
+const styles = {
+  signUpHeader: {
+    textAlign: 'left',
+    margin: '0px 0px 20px'
+  },
+  button: {
+    padding: '10px 60px',
+    backgroundColor: '#ffb102',
+    cursor: 'pointer',
+    borderRadius: '30px',
+    marginTop: 10,
+    marginBottom: 10,
+    ':hover': {
+      backgroundColor: '#ffbb22'
+    }
+  },
+  buttonText: {
+    margin: 0,
+    color: 'white'
+  },
+  container: {
+    flex: 1,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    paddingTop: '15px',
+  },
+  formContainer: {
+    padding: 20,
+    width: 400,
+    display: 'flex',
+    flexDirection: 'column',
+    boxShadow: "0px 0px 2px rgba(0, 0, 0, .2)",
+    borderRadius: 20
+  },
+  input: {
+    height: 40,
+    marginBottom: '10px',
+    border: 'none',
+    outline: 'none',
+    borderBottom: '2px solid #ffb102',
+    fontSize: '16px',
+    '::placeholder': {
+      color: 'rgba(0, 0, 0, .3)'
+    }
+  },
 }
