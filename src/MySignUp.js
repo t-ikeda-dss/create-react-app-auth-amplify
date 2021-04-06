@@ -44,9 +44,52 @@ export default class MySignUp extends SignUp {
         if (hide && hide.includes(MySignUp)) { return null; }
 
         return (
-            <div>
-              <SignUp/>
-            </div>
+            <FormSection data-component="FormSection" theme={theme}>
+              <div className="App">
+                <SectionHeader theme={theme}>サインアップ</SectionHeader>
+                <SectionBody theme={theme}>
+                    <InputRow 
+                        autoFocus
+                        placeholder="ユーザー名入力"
+                        theme={theme}
+                        key="username"
+                        name="username"
+                        onChange={this.handleInputChange}
+                        data-component="InputRow"
+                    />
+                    <InputRow
+                        placeholder="パスワード"
+                        theme={theme}
+                        type="password"
+                        key="password"
+                        name="password"
+                        onChange={this.handleInputChange}
+                    />
+                    <InputRow
+                        placeholder="メールアドレス"
+                        theme={theme}
+                        key="email"
+                        name="email"
+                        onChange={this.handleInputChange}
+                    />
+                    <Button data-component="Button" class="Button" onClick={this.signUp} theme={AmplifyTheme}>
+                        サインアップ
+                    </Button>
+                </SectionBody>
+                <SectionFooter theme={theme}>
+                    <div style={theme.col6}>
+                        <Link theme={theme} onClick={() => this.changeState('confirmSignUp')}>
+                            {I18n.get('Confirm a Code')}
+                        </Link>
+                    </div>
+                    <div style={theme.col6}>
+                        <Link theme={theme} onClick={() => this.changeState('signIn')}>
+                            サインイン
+                        </Link>
+                    </div>
+                </SectionFooter>
+              </div>
+            </FormSection>
         )
     }
 }
