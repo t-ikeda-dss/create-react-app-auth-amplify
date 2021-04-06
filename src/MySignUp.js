@@ -58,7 +58,6 @@ export default class MySignUp extends SignUp {
                         data-component="InputRow"
                     />
                     <input
-		        {...css(styles.input)}
                         placeholder="パスワード"
                         theme={theme}
                         type="password"
@@ -68,7 +67,7 @@ export default class MySignUp extends SignUp {
                     />
                     <input
                         placeholder="メールアドレス"
-                        theme={theme}
+                        theme={AmplifyTheme}
                         key="email"
                         name="email"
                         onChange={this.handleInputChange}
