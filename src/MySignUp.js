@@ -8,7 +8,7 @@ import {
     SectionHeader,
     SectionBody,
     SectionFooter,
-    FormField,
+    //FormField,
     InputLabel,
     PhoneField,
     SectionFooterPrimaryContent,
@@ -63,7 +63,7 @@ export default class MySignUp extends SignUp {
 				<SectionBody theme={theme} data-test={Auth.signUp.bodySection}>
 					{this.signUpFields.map(field => {
 						return field.key !== 'phone_number' ? (
-							<FormField theme={theme} key={field.key}>
+							<formfield theme={theme} key={field.key}>
 								{field.required ? (
 									<InputLabel theme={theme}>
 										{I18n.get(field.label)} *
@@ -83,7 +83,7 @@ export default class MySignUp extends SignUp {
 									onChange={this.handleInputChange}
 									data-test={Auth.signUp.nonPhoneNumberInput}
 								/>
-							</FormField>
+							</formfield>
 						) : (
 							<PhoneField
 								theme={theme}
