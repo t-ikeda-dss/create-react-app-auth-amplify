@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { css } from 'glamor'
+import { css } from 'glamor';
 import logo from './logo.svg';
 import './App.css';
 import Amplify, { Auth, I18n } from 'aws-amplify';
