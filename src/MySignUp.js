@@ -72,9 +72,9 @@ export default class MySignUp extends SignUp {
                         name="email"
                         onChange={this.handleInputChange}
                     />
-                    <Button data-component="Button" class="Button" onClick={this.signUp} theme={AmplifyTheme}>
+                    <button data-component="Button" class="Button" onClick={this.signUp} theme={AmplifyTheme}>
                         サインアップ
-                    </Button>
+                    </button>
                 </SectionBody>
                 <SectionFooter theme={theme}>
                     <div style={theme.col6}>
