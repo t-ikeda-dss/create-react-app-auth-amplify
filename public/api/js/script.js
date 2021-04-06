@@ -14,9 +14,9 @@ function callSearchApi() {
 
   var awsRegion = sessionStorage.getItem( "aws_region" );
   var awsPoolId = sessionStorage.getItem( "aws_poolid" );
-  var awsCliId = sessionStorage.getItem( "aws_cliid" );
+  var awsclitid = sessionStorage.getItem( "aws_clitid" );
   alert(awsPoolId);
-  alert(awsCliId);
+  alert(awsclitid);
   // get user name
   var userNameKey = "CognitoIdentityServiceProvider." + cognitoClientId + ".LastAuthUser";
   var userName = localStorage.getItem( userNameKey );
