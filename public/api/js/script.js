@@ -10,10 +10,13 @@ const cognitoClientId = '30j2k1vbmbsc85hqbi7omo8pp6';
 //----------------------------------------------------------------------------------------
 
 // search API execution function
-function callSearchApi(awsconfig) {
+function callSearchApi() {
 
-  alert(awsconfig.aws_project_region);
-  alert(awsconfig.aws_user_pools_web_client_id);
+  var awsRegion = sessionStorage.getItem( "aws_region" );
+  var awsPoolId = sessionStorage.getItem( "aws_poolid" );
+  var awsCliId = sessionStorage.getItem( "aws_cliid" );
+  alert(awsPoolId);
+  alert(awsCliId);
   // get user name
   var userNameKey = "CognitoIdentityServiceProvider." + cognitoClientId + ".LastAuthUser";
   var userName = localStorage.getItem( userNameKey );
