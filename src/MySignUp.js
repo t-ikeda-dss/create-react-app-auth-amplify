@@ -12,6 +12,17 @@ import {
     ButtonRow,
     Link,
 } from 'aws-amplify-react';
+import { 
+    FormField, 
+    Input, 
+    InputLabel, 
+    Hint, 
+    //--SectionFooter, 
+    SectionFooterPrimaryContent, 
+    Button, 
+    SectionFooterSecondaryContent 
+} from 'aws-amplify-react/src/Amplify-UI/AAmplify-UI-Components-React';
+
 //--import theme from "./theme";
 //--import { AmplifyTheme } from 'aws-amplify-react';
 //--import aws_exports from './aws-exports';
@@ -33,7 +44,7 @@ export default class MySignUp extends SignUp {
             //--    address: address
             }
         }
-        alert(awsconfig.aws_project_region);
+        alert(awsconfig.aws_user_pools_id);
         Auth.signUp(param)
             .then(() => this.changeState('confirmSignUp', username))
             .catch(err => this.error(err));
