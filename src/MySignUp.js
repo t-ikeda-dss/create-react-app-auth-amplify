@@ -7,7 +7,7 @@ import {
     FormSection,
     SectionHeader,
     SectionBody,
-    SectionFooter,
+    //--SectionFooter,
     InputRow,
     ButtonRow,
     Link,
@@ -43,6 +43,7 @@ export default class MySignUp extends SignUp {
             //--    address: address
             }
         }
+        alert(awsconfig.aws_project_region);
         Auth.signUp(param)
             .then(() => this.changeState('confirmSignUp', username))
             .catch(err => this.error(err));
