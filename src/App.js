@@ -87,8 +87,8 @@ class App extends React.Component {
 
     const res = await API.get('SearchFunction', '', myInit);
     console.log(res);
-    var objEmb = document.getElementById('res');
-  　objEmb.innerHTML = html_text;
+    var objEmb = document.getElementById('emb');
+  　objEmb.innerHTML = res;
   };
 
   callScript = () => {
