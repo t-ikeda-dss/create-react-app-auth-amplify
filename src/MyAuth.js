@@ -3,7 +3,7 @@ import { ConfirmSignIn, ConfirmSignUp, ForgotPassword, SignIn, SignOut, VerifyCo
 import MySignUp from './MySignUp'
 
 export function withMyAuthenticator(Comp, includeGreetings, theme) {
-  return withAuthenticator(Comp, includeGreetings, theme, [
+  return withAuthenticator(Comp, {includeGreetings: includeGreetings, theme: theme }, [
       <SignIn/>,
       <SignOut/>,
       <ConfirmSignIn/>,
