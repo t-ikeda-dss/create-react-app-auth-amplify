@@ -24,7 +24,7 @@ function useScript(url) {
   document.body.appendChild(script);
 }
 
-class App extends Component {
+class App extends React.Component {
   
   componentDidMount() {
     useScript('https://sdk.amazonaws.com/js/aws-sdk-2.7.19.min.js');
@@ -51,6 +51,10 @@ class App extends Component {
     //++  .then( text => document.querySelector('#inner').innerHTML = text );
   }
 
+  callScript = () => {
+    callSearchApi();
+  }
+
   render() {
     return (
       <AmplifyContainer>
@@ -61,7 +65,7 @@ class App extends Component {
             <legend>検索実行</legend>
             <label >検索文字列 : </label>
             <AmplifyInput id="scTxt" value="" type="text" placeholder="検索したいキーワードを入力"></AmplifyInput>
-            <AmplifyButton type="button" onclick={callSearchApi();}>検索 API 実行</AmplifyButton>
+            <AmplifyButton type="button" onclick={this.callScript}>検索 API 実行</AmplifyButton>
             <div id="emb">
   　        </div>
           </center>
