@@ -58,17 +58,14 @@ class App extends Component {
           <AmplifySignOut />
           <center>
             <legend>検索実行</legend>
-            <!--input search word-->
               <div class="form-group">
                 <label class="col-sm-2">検索文字列 : </label>
                 <input class="form-control" id="scTxt" value="" type="text" placeholder="検索したいキーワードを入力">
               </div>
-              <!--search execution button by api gateway-->
               <div class="form-group">
                 <button type="button" id="apiBtn" class="btn btn-lg btn-primary btn-block" onclick="callSearchApi();">検索 API 実行</button>
               </div>
           </center>
-          <!--show search result-->
   　      <div class="form-group2" id="emb">
   　      </div>      
         </AmplifyAuthenticator>
