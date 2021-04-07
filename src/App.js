@@ -53,7 +53,8 @@ class App extends Component {
   render() {
     return (
       <AmplifyAuthenticator>
-      <div id="inner"><AmplifySignOut /></div>
+        <div id="inner"></div>
+        <AmplifySignOut />
       </AmplifyAuthenticator>
     );
   }
