@@ -9,7 +9,7 @@ export const vocabularies = {
         'Enter your username': 'ユーザー名を入力',
         'Enter your password': 'パスワードを入力',
         'No account? ': 'アカウントが未登録ですか？',
-        'Forgot your password? ': 'パスワードをお忘れですか？',
+        'Forget your password? ': 'パスワードをお忘れですか？',
         'Reset password': 'パスワードをリセット',
         'User does not exist': 'ユーザーが存在しません',
         'User already exists': 'ユーザーは既に存在します',
