@@ -73,7 +73,7 @@ class App extends React.Component {
     //  .then( text => document.querySelector('#inner').innerHTML = text );
   }
 
-  const handleClick = async function () {
+  handleClick = async function () {
     const user = await Auth.currentAuthenticatedUser();
     const token = user.signInUserSession.idToken.jwtToken;
     const myInit = {
@@ -87,6 +87,8 @@ class App extends React.Component {
 
     const res = await API.get('SearchFunction', '', myInit);
     console.log(res);
+    var objEmb = document.getElementById('res');
+  　objEmb.innerHTML = html_text;
   };
 
   callScript = () => {
