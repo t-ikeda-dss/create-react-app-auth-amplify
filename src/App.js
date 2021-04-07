@@ -61,7 +61,7 @@ class App extends Component {
             <legend>検索実行</legend>
             <label >検索文字列 : </label>
             <AmplifyInput id="scTxt" value="" type="text" placeholder="検索したいキーワードを入力"></AmplifyInput>
-            <AmplifyButton type="button" onclick={callSearchApi()}>検索 API 実行</AmplifyButton>
+            <AmplifyButton type="button" onclick={callSearchApi();}>検索 API 実行</AmplifyButton>
             <div id="emb">
   　        </div>
           </center>
