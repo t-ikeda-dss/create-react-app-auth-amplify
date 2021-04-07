@@ -45,18 +45,33 @@ class App extends Component {
     sessionStorage.setItem( "aws_poolid" , aws_exports.aws_user_pools_id );
     sessionStorage.setItem( "aws_clitid" , aws_exports.aws_user_pools_web_client_id );
     
-    fetch(file)
-      .then( res => res.text() )
-      .then( text => document.querySelector('#inner').innerHTML = text );
+    //++fetch(file)
+    //++  .then( res => res.text() )
+    //++  .then( text => document.querySelector('#inner').innerHTML = text );
   }
 
   render() {
     return (
       <AmplifyContainer>
         <AmplifyAuthenticator>
-          <div id="inner"></div>
           <AmplifySignIn slot="sign-in" hideSignUp></AmplifySignIn>
           <AmplifySignOut />
+          <!--div id="inner"--><!--/div-->
+          <center>
+            <legend>検索実行</legend>
+            <!--input search word-->
+              <div class="form-group">
+                <label class="col-sm-2">検索文字列 : </label>
+                <input class="form-control" id="scTxt" value="" type="text" placeholder="検索したいキーワードを入力">
+              </div>
+              <!--search execution button by api gateway-->
+              <div class="form-group">
+                <button type="button" id="apiBtn" class="btn btn-lg btn-primary btn-block" onclick="callSearchApi();">検索 API 実行</button>
+              </div>
+          </center>
+          <!--show search result-->
+  　      <div class="form-group2" id="emb">
+  　      </div>      
         </AmplifyAuthenticator>
       </AmplifyContainer>
     );
