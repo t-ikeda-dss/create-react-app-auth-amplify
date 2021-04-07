@@ -5,7 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 //--import { withMyAuthenticator } from './MyAuth';
 import Amplify, { Auth } from 'aws-amplify';
-import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'; 
+import { AmplifyAuthenticator, AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react'; 
 import { I18n } from 'aws-amplify';
 import { vocabularies } from './vocabularies';
 import aws_exports from './aws-exports';
@@ -52,10 +52,13 @@ class App extends Component {
 
   render() {
     return (
-      <AmplifyAuthenticator>
-        <div id="inner"></div>
-        <AmplifySignOut />
-      </AmplifyAuthenticator>
+      <AmplifyContainer>
+        <AmplifyAuthenticator>
+          <div id="inner"></div>
+          <AmplifySignIn slot="sign-in" hideSignUp></AmplifySignIn>
+          <AmplifySignOut />
+        </AmplifyAuthenticator>
+      </AmplifyContainer>
     );
   }
 }
