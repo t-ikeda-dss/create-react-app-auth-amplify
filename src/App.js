@@ -5,7 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 //--import { withMyAuthenticator } from './MyAuth';
 import Amplify, { Auth } from 'aws-amplify';
-import { AmplifyAuthenticator } from '@aws-amplify/ui-react'; 
+import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'; 
 import { I18n } from 'aws-amplify';
 import { vocabularies } from './vocabularies';
 import aws_exports from './aws-exports';
