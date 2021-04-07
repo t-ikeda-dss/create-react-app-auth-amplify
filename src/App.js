@@ -12,6 +12,28 @@ import { vocabularies } from './vocabularies2';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 
+Amplify.configure({
+    // OPTIONAL - if your API requires authentication 
+    Auth: {
+        // REQUIRED - Amazon Cognito Identity Pool ID
+        //--identityPoolId: 'XX-XXXX-X:XXXXXXXX-XXXX-1234-abcd-1234567890ab',
+        // REQUIRED - Amazon Cognito Region
+        region: 'ap-northeast-1', 
+        // OPTIONAL - Amazon Cognito User Pool ID
+        userPoolId: 'ap-northeast-1_S01Kqn7pX', 
+        // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
+        userPoolWebClientId: '30j2k1vbmbsc85hqbi7omo8pp6',
+    },
+    API: {
+        endpoints: [
+            {
+                name: "SearchFunction",
+                endpoint: " https://gf3u303pmb.execute-api.ap-northeast-1.amazonaws.com"
+            }
+        ]
+    }
+});
+
 // 
 I18n.putVocabularies(vocabularies);
 I18n.setLanguage('ja');
