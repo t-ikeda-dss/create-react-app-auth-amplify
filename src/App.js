@@ -56,7 +56,6 @@ class App extends Component {
         <AmplifyAuthenticator>
           <AmplifySignIn slot="sign-in" hideSignUp></AmplifySignIn>
           <AmplifySignOut />
-          <!--div id="inner"/div-->
           <center>
             <legend>検索実行</legend>
             <!--input search word-->
