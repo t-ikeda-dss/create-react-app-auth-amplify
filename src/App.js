@@ -16,7 +16,7 @@ Amplify.configure({
     // OPTIONAL - if your API requires authentication 
     Auth: {
         // REQUIRED - Amazon Cognito Identity Pool ID
-        //--identityPoolId: 'XX-XXXX-X:XXXXXXXX-XXXX-1234-abcd-1234567890ab',
+        identityPoolId: 'ap-northeast-1:f749b712-c439-48f4-9fa5-a7ce66fdbc25',
         // REQUIRED - Amazon Cognito Region
         region: 'ap-northeast-1', 
         // OPTIONAL - Amazon Cognito User Pool ID
