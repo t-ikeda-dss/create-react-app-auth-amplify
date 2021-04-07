@@ -12,7 +12,7 @@ const myTheme = {
 };
 
 export function withMyAuthenticator(Comp, greetings) {
-  return withAuthenticator(Comp, {includeGreetings: greetings, theme: myTheme }, [
+  return withAuthenticator(Comp, {includeGreetings: true, theme: myTheme }, [
       <SignIn/>,
       <SignOut/>,
       <ConfirmSignIn/>,
