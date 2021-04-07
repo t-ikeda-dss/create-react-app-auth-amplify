@@ -59,4 +59,4 @@ class App extends Component {
   }
 }
 
-export default withMyAuthenticator(App, {includeGreetings: true, theme: myTheme });
+export default withMyAuthenticator(App, true, myTheme);
