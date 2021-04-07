@@ -7,7 +7,7 @@ import './App.css';
 import Amplify, { Auth } from 'aws-amplify';
 import { AmplifyAuthenticator, AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react'; 
 import { I18n } from 'aws-amplify';
-import { vocabularies } from './vocabularies';
+import { vocabularies } from './vocabularies2';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 
