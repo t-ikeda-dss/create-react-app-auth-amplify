@@ -73,6 +73,22 @@ class App extends React.Component {
       .then( text => document.querySelector('#inner').innerHTML = text );
   }
 
+  const handleClick = async function () {
+    const user = await Auth.currentAuthenticatedUser();
+    const token = user.signInUserSession.idToken.jwtToken;
+    const myInit = {
+      headers: {
+        Authorization: token,
+      },
+      'queryStringParameters': {
+        'q': 'aws'
+      }
+    };
+
+    const res = await API.get('SearchFunction', '', myInit);
+    console.log(res);
+  };
+
   callScript = () => {
     alert("call script");
     //--callSearchApi();
