@@ -6,6 +6,7 @@ import './App.css';
 //--import { withMyAuthenticator } from './MyAuth';
 import Amplify, { Auth } from 'aws-amplify';
 import { AmplifyAuthenticator, AmplifyContainer, AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react'; 
+import { AmplifyButton } from '@aws-amplify/ui-react'; 
 import { I18n } from 'aws-amplify';
 import { vocabularies } from './vocabularies2';
 import aws_exports from './aws-exports';
@@ -58,9 +59,9 @@ class App extends Component {
           <AmplifySignOut />
           <center>
             <legend>検索実行</legend>
-              <label class="col-sm-2">検索文字列 : </label>
-              <input class="form-control" id="scTxt" value="" type="text" placeholder="検索したいキーワードを入力">
-              <button type="button" id="apiBtn" class="btn btn-lg btn-primary btn-block" onclick="callSearchApi();">検索 API 実行</button>
+              <label >検索文字列 : </label>
+              <input id="scTxt" value="" type="text" placeholder="検索したいキーワードを入力"></input>
+              <AmplifyButton type="button" id="apiBtn" onclick="callSearchApi();">検索 API 実行</AmplifyButton>
           </center>
         </AmplifyAuthenticator>
       </AmplifyContainer>
