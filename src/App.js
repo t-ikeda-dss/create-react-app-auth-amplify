@@ -52,7 +52,8 @@ class App extends React.Component {
   }
 
   callScript = () => {
-    callSearchApi();
+    alert("call script");
+    //--callSearchApi();
   }
 
   render() {
