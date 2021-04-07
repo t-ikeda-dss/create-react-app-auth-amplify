@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { FormSection, SectionHeader, SectionBody, SectionFooter, InputRow, ButtonRow, Link, } from 'aws-amplify-react';
+//--import { FormSection, SectionHeader, SectionBody, SectionFooter, InputRow, ButtonRow, Link, } from 'aws-amplify-react';
 import file from './api/search.htm';
 import logo from './logo.svg';
 import './App.css';
-import { withMyAuthenticator } from './MyAuth';
+//--import { withMyAuthenticator } from './MyAuth';
 import Amplify, { Auth } from 'aws-amplify';
-//--import { AmplifyAuthenticator } from '@aws-amplify/ui-react'; 
+import { AmplifyAuthenticator } from '@aws-amplify/ui-react'; 
 import { I18n } from 'aws-amplify';
 import { vocabularies } from './vocabularies';
 import aws_exports from './aws-exports';
@@ -52,7 +52,9 @@ class App extends Component {
 
   render() {
     return (
-      <div id="inner"></div>
+      <AmplifyAuthenticator>
+      <div id="inner"><AmplifySignOut /></div>
+      </AmplifyAuthenticator>
     );
   }
 }
