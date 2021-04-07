@@ -68,9 +68,9 @@ class App extends React.Component {
     sessionStorage.setItem( "aws_poolid" , aws_exports.aws_user_pools_id );
     sessionStorage.setItem( "aws_clitid" , aws_exports.aws_user_pools_web_client_id );
     
-    fetch(file)
-      .then( res => res.text() )
-      .then( text => document.querySelector('#inner').innerHTML = text );
+    //fetch(file)
+    //  .then( res => res.text() )
+    //  .then( text => document.querySelector('#inner').innerHTML = text );
   }
 
   const handleClick = async function () {
@@ -100,7 +100,15 @@ class App extends React.Component {
         <AmplifyAuthenticator>
           <AmplifySignIn slot="sign-in" hideSignUp></AmplifySignIn>
           <AmplifySignOut />
-          <div id="inner"></div>
+          <center>
+            <legend>検索実行</legend>
+            <label >検索文字列 : </label>
+            <AmplifyInput id="scTxt" value="" type="text" placeholder="検索したいキーワードを入力"></AmplifyInput>
+            <button type="button" onclick="callSearchApi();">Amplify のボタン</button>
+            <AmplifyButton type="button" onclick={this.handleClick}>Amplify のボタン</AmplifyButton>
+            <div id="emb">
+  　        </div>
+          </center>
         </AmplifyAuthenticator>
       </AmplifyContainer>
     );
