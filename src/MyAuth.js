@@ -6,7 +6,7 @@ import { AmplifyTheme } from 'aws-amplify-react';
 const myTheme = {
     ...AmplifyTheme,
     BackgroundColor: { color: 'blue',backgroundColor: 'blue' },
-    button: { color: 'green',backgroundColor: 'green' },
+    button: { color: 'black',backgroundColor: 'green' },
     amazonSignInButton: { color: 'blue',backgroundColor: 'blue' },
     signInButton: { backgroundColor: 'blue' , color: 'blue'}
 };
