@@ -31,32 +31,18 @@ Amplify.configure({
 I18n.putVocabularies(vocabularies);
 I18n.setLanguage('ja');
 
-// 
-function useScript(url) {
-  const script = document.createElement('script');
-  script.src = url;
-  script.async = true;
-  document.body.appendChild(script);
-}
-
 class App extends React.Component {
 
-  var searchKeyword = "aws";
-
-  componentDidMount() {
-    sessionStorage.setItem( "aws_region" , aws_exports.aws_project_region );
-    sessionStorage.setItem( "aws_poolid" , aws_exports.aws_user_pools_id );
-    sessionStorage.setItem( "aws_clitid" , aws_exports.aws_user_pools_web_client_id );
-  }
+  searchKeyword = "aws"
 
   handleClick = async function () {
-    const apiName = 'SearchFunction';
-    const path = '';
-    //--const user = await Auth.currentAuthenticatedUser();
-    //--const token = user.signInUserSession.idToken.jwtToken;
-    var keyword = this.searchKeyword;
+    const apiName = 'SearchFunction'
+    const path = ''
+    //--const user = await Auth.currentAuthenticatedUser()
+    //--const token = user.signInUserSession.idToken.jwtToken
+    var keyword = this.searchKeyword
     if(keyword == '') {
-      keyword = 'aws';
+      keyword = 'aws'
     }
       
     const option = {
@@ -69,12 +55,12 @@ class App extends React.Component {
       }
     };
 
-    var res = await API.get(apiName, path, option);
+    var res = await API.get(apiName, path, option)
     if ( res == null ) {
-      res = "<p>null が返却されました。</p>";
+      res = "<p>null が返却されました。</p>"
     }
-    console.log(res);
-    document.getElementById('emb').innerHTML = res;
+    console.log(res)
+    document.getElementById('emb').innerHTML = res
   };
 
   render() {
