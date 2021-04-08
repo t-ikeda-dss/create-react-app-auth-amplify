@@ -42,6 +42,10 @@ class App extends React.Component {
     //--const token = user.signInUserSession.idToken.jwtToken
 
     var textObj = document.getElementById('scTxt')
+    var value = textObj.value
+    console.log(textObj)
+    console.log(value)
+    
     var keyword = document.getElementById('scTxt').value
     if(keyword == '') {
       keyword = 'aws'
