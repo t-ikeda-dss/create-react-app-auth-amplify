@@ -58,9 +58,9 @@ class App extends React.Component {
     //  .then( text => document.querySelector('#inner').innerHTML = text );
   }
 
-  handleClick = async function () {
+  function GetSearchApi(keyword) {
     const apiName = 'SearchFunction';
-    const path = '';      
+    const path = '';
     //--const user = await Auth.currentAuthenticatedUser();
     //--const token = user.signInUserSession.idToken.jwtToken;
     const option = {
@@ -68,23 +68,33 @@ class App extends React.Component {
         //--Authorization: token,
       },
       'queryStringParameters': {
-        'q': 'aws'
+        'q': keyword
       }
     };
 
-    API
-      .get(apiName, path, option)
-      .then(response => {
-        console.log(response);
-        var objEmb = document.getElementById('emb');
-      　objEmb.innerHTML = response;
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    return API.get(apiName, path, option);
+      
+    //API
+    //  .get(apiName, path, option)
+    //  .then(response => {
+    //    console.log(response);
+    //    var objEmb = document.getElementById('emb');
+    //  　objEmb.innerHTML = response;
+    //  })
+    //  .catch(error => {
+    //    console.log(error);
+    //  });
+
     //const res = await API.get(apiName, path, option);
   };
 
+  async function handleClick() {
+      var keyword = document.getElementById('scTxt').value;
+      var response = await GetSearchApi(keyword);
+      var objEmb = document.getElementById('emb');
+    　objEmb.innerHTML = response;
+  }
+    
   callScript = () => {
     alert("call script");
     //--callSearchApi();
