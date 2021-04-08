@@ -9,7 +9,7 @@ import { AmplifyAuthenticator, AmplifyContainer, AmplifySignIn, AmplifySignOut }
 import { AmplifyButton, AmplifyInput } from '@aws-amplify/ui-react'; 
 import { I18n } from 'aws-amplify';
 import { vocabularies } from './vocabularies2';
-import aws_exports from './aws-exports';
+import aws_exports from './aws-exports2';
 Amplify.configure(aws_exports);
 
 Amplify.configure({
