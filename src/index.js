@@ -9,7 +9,7 @@ import awsconfig from './aws-exports2';
 Amplify.configure(awsconfig);
 
 ReactDOM.render(
-    <App />
+    <App />,
   document.getElementById('root')
 );
 
