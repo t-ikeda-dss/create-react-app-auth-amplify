@@ -52,7 +52,7 @@ class App extends React.Component {
     const path = '';
     //--const user = await Auth.currentAuthenticatedUser();
     //--const token = user.signInUserSession.idToken.jwtToken;
-    var keyword = document.getElementById('scTxt').value;
+    var keyword = document.querySelector('#scTxt').value;
       
     const option = {
       headers: {
@@ -76,8 +76,7 @@ class App extends React.Component {
 
     var res = await API.get(apiName, path, option);
     console.log(res);
-    var objEmb = document.getElementById('emb');
-  　objEmb.innerHTML = res;
+    document.querySelector('#emb').innerHTML = res;
   };
 
   render() {
