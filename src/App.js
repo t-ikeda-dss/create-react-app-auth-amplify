@@ -41,6 +41,7 @@ class App extends React.Component {
     //--const user = await Auth.currentAuthenticatedUser()
     //--const token = user.signInUserSession.idToken.jwtToken
 
+    var textObj = document.getElementById('scTxt')
     var keyword = document.getElementById('scTxt').value
     if(keyword == '') {
       keyword = 'aws'
@@ -57,6 +58,12 @@ class App extends React.Component {
     };
 
     var res = await API.get(apiName, path, option)
+    .then(response => {
+      console.log(response)
+    }
+    .catch(error => {
+      console.log(error.response)
+    });
     if ( res == null ) {
       res = "<p>null が返却されました。</p>"
     }
