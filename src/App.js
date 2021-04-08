@@ -16,13 +16,13 @@ Amplify.configure({
     // OPTIONAL - if your API requires authentication 
     Auth: {
         // REQUIRED - Amazon Cognito Identity Pool ID
-        identityPoolId: 'ap-northeast-1:f749b712-c439-48f4-9fa5-a7ce66fdbc25',
+    //    identityPoolId: 'ap-northeast-1:f749b712-c439-48f4-9fa5-a7ce66fdbc25',
         // REQUIRED - Amazon Cognito Region
-        region: 'ap-northeast-1', 
+    //    region: 'ap-northeast-1', 
         // OPTIONAL - Amazon Cognito User Pool ID
-        userPoolId: 'ap-northeast-1_S01Kqn7pX', 
+    //    userPoolId: 'ap-northeast-1_S01Kqn7pX', 
         // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-        userPoolWebClientId: '30j2k1vbmbsc85hqbi7omo8pp6',
+    //    userPoolWebClientId: '30j2k1vbmbsc85hqbi7omo8pp6',
     },
     API: {
         endpoints: [
