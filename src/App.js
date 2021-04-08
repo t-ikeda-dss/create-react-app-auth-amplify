@@ -40,7 +40,9 @@ function useScript(url) {
 }
 
 class App extends React.Component {
-  
+
+  searchKeyword = "";
+
   componentDidMount() {
     sessionStorage.setItem( "aws_region" , aws_exports.aws_project_region );
     sessionStorage.setItem( "aws_poolid" , aws_exports.aws_user_pools_id );
@@ -52,7 +54,7 @@ class App extends React.Component {
     const path = '';
     //--const user = await Auth.currentAuthenticatedUser();
     //--const token = user.signInUserSession.idToken.jwtToken;
-    var keyword = await document.getElementById('scTxt').value;
+    var keyword = this.searchKeyword;
     if(keyword == '') {
       keyword = 'aws';
     }
@@ -83,7 +85,7 @@ class App extends React.Component {
           <center>
             <legend>検索実行</legend>
             <label >検索文字列 : </label>
-            <input id="scTxt" value="" type="text" placeholder="検索キーワード入力"></input>
+            <AmplifyInput id="scTxt" value={this.searchKeyword} type="text" placeholder="検索キーワード入力"></AmplifyInput>
             <AmplifyButton type="button" onclick={this.handleClick}>検索</AmplifyButton>
             <div id="emb">
   　        </div>
