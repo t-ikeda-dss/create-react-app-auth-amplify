@@ -40,8 +40,10 @@ class App extends React.Component {
     const path = ''
     //--const user = await Auth.currentAuthenticatedUser()
     //--const token = user.signInUserSession.idToken.jwtToken
-    if(this.searchKeyword == '') {
-      this.searchKeyword = 'aws'
+
+    var keyword = document.getElementById('scTxt').value
+    if(keyword == '') {
+      keyword = 'aws'
     }
       
     const option = {
@@ -50,7 +52,7 @@ class App extends React.Component {
         accept: 'text/html'
       },
       'queryStringParameters': {
-        'q': this.searchKeyword
+        'q': keyword
       }
     };
 
