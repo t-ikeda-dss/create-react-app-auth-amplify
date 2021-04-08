@@ -93,7 +93,7 @@ class App extends React.Component {
   handleClick = async function () {
   //handleClick = () => {
       //var keyword = document.getElementById('scTxt').value;
-      var response = await GetSearchApi();
+      var response = await this.GetSearchApi();
       var objEmb = document.getElementById('emb');
     　objEmb.innerHTML = response;
   }
