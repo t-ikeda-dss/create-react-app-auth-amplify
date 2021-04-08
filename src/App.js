@@ -42,7 +42,7 @@ class App extends React.Component {
     //--const token = user.signInUserSession.idToken.jwtToken
 
     var textObj = document.getElementById('scTxt')
-    var value = textObj.value
+    var value = textObj.firstChild.value
     console.log(textObj)
     console.log(value)
     
