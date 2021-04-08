@@ -46,7 +46,7 @@ class App extends React.Component {
     console.log(textObj)
     console.log(value)
     
-    var keyword = document.getElementById('scTxt').value
+    var keyword = value
     if(keyword == '') {
       keyword = 'aws'
     }
