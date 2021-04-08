@@ -52,7 +52,10 @@ class App extends React.Component {
     const path = '';
     //--const user = await Auth.currentAuthenticatedUser();
     //--const token = user.signInUserSession.idToken.jwtToken;
-    var keyword = document.querySelector('#scTxt').value;
+    var keyword = await document.getElementById('scTxt').value;
+    if(keyword == '') {
+      keyword = 'aws';
+    }
       
     const option = {
       headers: {
@@ -63,20 +66,9 @@ class App extends React.Component {
       }
     };
 
-    //API
-    //  .get(apiName, path, option)
-    //  .then(response => {
-    //    console.log(response);
-    //    var objEmb = document.getElementById('emb');
-    //  　objEmb.innerHTML = response;
-    //  })
-    //  .catch(error => {
-    //    console.log(error);
-    //  });
-
     var res = await API.get(apiName, path, option);
     console.log(res);
-    document.querySelector('#emb').innerHTML = res;
+    await document.getElementById('emb').innerHTML = res;
   };
 
   render() {
