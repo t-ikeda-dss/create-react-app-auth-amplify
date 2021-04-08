@@ -68,7 +68,7 @@ class App extends React.Component {
 
     var res = await API.get(apiName, path, option);
     console.log(res);
-    await document.getElementById('emb').innerHTML = res;
+    document.getElementById('emb').innerHTML = res;
   };
 
   render() {
