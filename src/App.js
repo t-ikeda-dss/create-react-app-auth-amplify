@@ -54,7 +54,7 @@ class App extends React.Component {
     const option = {
       headers: {
         //--Authorization: token,
-        accept: 'text/html'
+        //--accept: 'text/html'
       },
       'queryStringParameters': {
         'q': keyword
