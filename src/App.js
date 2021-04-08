@@ -59,9 +59,11 @@ class App extends React.Component {
   }
 
   handleClick = async function () {
-    const user = await Auth.currentAuthenticatedUser();
-    const token = user.signInUserSession.idToken.jwtToken;
-    const myInit = {
+    const apiName = 'SearchFunction';
+    const path = '';      
+    //--const user = await Auth.currentAuthenticatedUser();
+    //--const token = user.signInUserSession.idToken.jwtToken;
+    const option = {
       headers: {
         //--Authorization: token,
       },
@@ -70,10 +72,17 @@ class App extends React.Component {
       }
     };
 
-    const res = await API.get('SearchFunction', '', myInit);
-    console.log(res);
-    var objEmb = document.getElementById('emb');
-  　objEmb.innerHTML = res;
+    API
+      .get(apiName, path, option)
+      .then(response => {
+        console.log(response);
+        var objEmb = document.getElementById('emb');
+      　objEmb.innerHTML = response;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    //const res = await API.get(apiName, path, option);
   };
 
   callScript = () => {
