@@ -41,7 +41,7 @@ function useScript(url) {
 
 class App extends React.Component {
 
-  searchKeyword = "";
+  var searchKeyword = "aws";
 
   componentDidMount() {
     sessionStorage.setItem( "aws_region" , aws_exports.aws_project_region );
@@ -62,6 +62,7 @@ class App extends React.Component {
     const option = {
       headers: {
         //--Authorization: token,
+        accept: 'text/html'
       },
       'queryStringParameters': {
         'q': keyword
