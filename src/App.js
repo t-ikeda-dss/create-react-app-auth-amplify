@@ -16,13 +16,13 @@ Amplify.configure({
     // OPTIONAL - if your API requires authentication 
     Auth: {
         // REQUIRED - Amazon Cognito Identity Pool ID
-    //    identityPoolId: 'ap-northeast-1:f749b712-c439-48f4-9fa5-a7ce66fdbc25',
+        identityPoolId: 'ap-northeast-1:e7495629-4820-4a34-a4ab-2858a8592b3c',
         // REQUIRED - Amazon Cognito Region
-    //    region: 'ap-northeast-1', 
+        region: 'ap-northeast-1', 
         // OPTIONAL - Amazon Cognito User Pool ID
-    //    userPoolId: 'ap-northeast-1_S01Kqn7pX', 
+        userPoolId: 'ap-northeast-1_Pif7YAiJv', 
         // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-    //    userPoolWebClientId: '30j2k1vbmbsc85hqbi7omo8pp6',
+        userPoolWebClientId: '57b2eetaf7vo2jo7gkvj2g0g4d',
     },
     API: {
         endpoints: [
@@ -63,7 +63,7 @@ class App extends React.Component {
     const token = user.signInUserSession.idToken.jwtToken;
     const myInit = {
       headers: {
-        Authorization: token,
+        //--Authorization: token,
       },
       'queryStringParameters': {
         'q': 'aws'
@@ -91,8 +91,8 @@ class App extends React.Component {
             <legend>検索実行</legend>
             <label >検索文字列 : </label>
             <AmplifyInput id="scTxt" value="" type="text" placeholder="検索したいキーワードを入力"></AmplifyInput>
-            <button type="button" onclick="callSearchApi();">Amplify のボタン</button>
-            <AmplifyButton type="button" onclick={this.handleClick}>Amplify のボタン</AmplifyButton>
+            <AmplifyButton type="button" onclick={this.callScript}>Alert 表示</AmplifyButton>
+            <AmplifyButton type="button" onclick={this.handleClick}>API Call</AmplifyButton>
             <div id="emb">
   　        </div>
           </center>
