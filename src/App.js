@@ -58,11 +58,13 @@ class App extends React.Component {
     //  .then( text => document.querySelector('#inner').innerHTML = text );
   }
 
-  GetSearchApit = (keyword) => {
+  GetSearchApit = () => {
     const apiName = 'SearchFunction';
     const path = '';
     //--const user = await Auth.currentAuthenticatedUser();
     //--const token = user.signInUserSession.idToken.jwtToken;
+    var keyword = document.getElementById('scTxt').value;
+      
     const option = {
       headers: {
         //--Authorization: token,
@@ -88,9 +90,10 @@ class App extends React.Component {
     //const res = await API.get(apiName, path, option);
   };
 
-  handleClick = () => {
-      var keyword = document.getElementById('scTxt').value;
-      var response = await GetSearchApi(keyword);
+  handleClick = async function () {
+  //handleClick = () => {
+      //var keyword = document.getElementById('scTxt').value;
+      var response = await GetSearchApi();
       var objEmb = document.getElementById('emb');
     　objEmb.innerHTML = response;
   }
