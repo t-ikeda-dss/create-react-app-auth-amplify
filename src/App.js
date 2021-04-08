@@ -88,7 +88,7 @@ class App extends React.Component {
     //const res = await API.get(apiName, path, option);
   };
 
-  async handleClick = () => {
+  handleClick = () => {
       var keyword = document.getElementById('scTxt').value;
       var response = await GetSearchApi(keyword);
       var objEmb = document.getElementById('emb');
