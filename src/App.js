@@ -67,6 +67,9 @@ class App extends React.Component {
     };
 
     var res = await API.get(apiName, path, option);
+    if ( res == null ) {
+      res = "<p>null が返却されました。</p>";
+    }
     console.log(res);
     document.getElementById('emb').innerHTML = res;
   };
@@ -80,7 +83,7 @@ class App extends React.Component {
           <center>
             <legend>検索実行</legend>
             <label >検索文字列 : </label>
-            <AmplifyInput id="scTxt" value="" type="text" placeholder="検索キーワード入力"></AmplifyInput>
+            <input id="scTxt" value="" type="text" placeholder="検索キーワード入力"></input>
             <AmplifyButton type="button" onclick={this.handleClick}>検索</AmplifyButton>
             <div id="emb">
   　        </div>
