@@ -58,7 +58,7 @@ class App extends React.Component {
     //  .then( text => document.querySelector('#inner').innerHTML = text );
   }
 
-  GetSearchApit = () => {
+  GetSearchApi = () => {
     const apiName = 'SearchFunction';
     const path = '';
     //--const user = await Auth.currentAuthenticatedUser();
