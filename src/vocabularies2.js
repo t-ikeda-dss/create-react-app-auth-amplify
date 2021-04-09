@@ -45,5 +45,6 @@ export const vocabularies = {
         'An account with the given email already exists.': 'そのメールアドレスは既に存在します',
         'Username cannot be empty': 'ユーザー名は必須です',
         'Password attempts exceeded': 'パスワード試行回数が超過しました',
+        'Password cannot be empty': 'パスワードが入力されていません'
     },
 };
