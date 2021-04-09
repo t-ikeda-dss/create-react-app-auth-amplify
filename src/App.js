@@ -43,20 +43,15 @@ class App extends React.Component {
   handleClick = async function () {
     const apiName = 'SearchFunction'
     const path = ''
-    const user = await Auth.currentAuthenticatedUser()
-    const token = user.signInUserSession.idToken.jwtToken
+    //--const user = await Auth.currentAuthenticatedUser()
+    //--const token = user.signInUserSession.idToken.jwtToken
 
     var textObj = document.getElementById('scTxt')
-    var value = textObj.firstChild.value
-    var keyword = value
-    if(keyword == '') {
-      keyword = 'aws'
-    }
+    var keyword = textObj.firstChild.value
       
     const option = {
       headers: {
-        Authorization: token,
-        //--accept: 'text/html'
+        //--Authorization: token,
       },
       'queryStringParameters': {
         'q': keyword
@@ -84,11 +79,7 @@ class App extends React.Component {
     const token = user.signInUserSession.idToken.jwtToken
 
     var textObj = document.getElementById('scTxt')
-    var value = textObj.firstChild.value
-    var keyword = value
-    if(keyword == '') {
-      keyword = 'aws'
-    }
+    var keyword = textObj.firstChild.value
       
     const option = {
       headers: {
