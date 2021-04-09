@@ -65,11 +65,6 @@ class App extends React.Component {
         console.log('data = ' + data);
         document.getElementById('emb').innerHTML = data;
       },
-      reaponse(data) {
-        /* process the data */
-        console.log('data = ' + data);
-        document.getElementById('emb').innerHTML = data;
-      },
       function(error) {
         /* handle the error */
         console.log(error.response);
