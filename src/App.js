@@ -84,7 +84,7 @@ class App extends React.Component {
     const option = {
       headers: {
         Authorization: token,
-        AwsUserAuthToken: token,
+        X-UserAuthToken: token,
       },
       'queryStringParameters': {
         'q': keyword
