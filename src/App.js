@@ -33,7 +33,7 @@ I18n.setLanguage('ja');
 
 class App extends React.Component {
 
-  searchKeyword = "aws"
+  searchKeyword = ""
 
   handleClick = async function () {
     const apiName = 'SearchFunction'
