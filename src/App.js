@@ -58,9 +58,10 @@ class App extends React.Component {
       }
     };
 
-    var res = await API.get(apiName, path, option)
+    var res = API.get(apiName, path, option)
     .then(response => {
-      console.log(response)
+      console.log('reaponse = ' + response)
+      document.getElementById('emb').innerHTML = response
     })
     .catch(error => {
       console.log(error.response)
@@ -68,8 +69,8 @@ class App extends React.Component {
     if ( res == null ) {
       res = "<p>null が返却されました。</p>"
     }
-    console.log(res)
-    document.getElementById('emb').innerHTML = res
+    console.log('res = ' + res)
+    //--document.getElementById('emb').innerHTML = res
   };
 
   handleClick2 = async function () {
@@ -84,7 +85,7 @@ class App extends React.Component {
     const option = {
       headers: {
         Authorization: token,
-        X-AuthToken: token
+        AuthToken: token,
       },
       'queryStringParameters': {
         'q': keyword
@@ -103,7 +104,7 @@ class App extends React.Component {
       res = "<p>null が返却されました。</p>"
     }
     console.log('res = ' + res)
-    document.getElementById('emb').innerHTML = res
+    //--document.getElementById('emb').innerHTML = res
   };
 
   render() {
