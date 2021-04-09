@@ -22,6 +22,11 @@ Amplify.configure({
       {
         name: "SearchFunction",
         endpoint: "https://gf3u303pmb.execute-api.ap-northeast-1.amazonaws.com/default/SearchFunction"
+      },
+      {
+        // 
+        name: "TestSearch",
+        endpoint: "https://ln7hfi97tf.execute-api.ap-northeast-1.amazonaws.com/default/TestSearch"
       }
     ]
   }
@@ -43,9 +48,6 @@ class App extends React.Component {
 
     var textObj = document.getElementById('scTxt')
     var value = textObj.firstChild.value
-    console.log(textObj)
-    console.log(value)
-    
     var keyword = value
     if(keyword == '') {
       keyword = 'aws'
@@ -55,6 +57,42 @@ class App extends React.Component {
       headers: {
         //--Authorization: token,
         //--accept: 'text/html'
+      },
+      'queryStringParameters': {
+        'q': keyword
+      }
+    };
+
+    var res = await API.get(apiName, path, option)
+    .then(response => {
+      console.log(response)
+    })
+    .catch(error => {
+      console.log(error.response)
+    });
+    if ( res == null ) {
+      res = "<p>null が返却されました。</p>"
+    }
+    console.log(res)
+    document.getElementById('emb').innerHTML = res
+  };
+
+  handleClick2 = async function () {
+    const apiName = 'TestSearch'
+    const path = ''
+    const user = await Auth.currentAuthenticatedUser()
+    const token = user.signInUserSession.idToken.jwtToken
+
+    var textObj = document.getElementById('scTxt')
+    var value = textObj.firstChild.value
+    var keyword = value
+    if(keyword == '') {
+      keyword = 'aws'
+    }
+      
+    const option = {
+      headers: {
+        Authorization: token,
       },
       'queryStringParameters': {
         'q': keyword
@@ -86,6 +124,7 @@ class App extends React.Component {
             <label >検索文字列 : </label>
             <AmplifyInput id="scTxt" value={this.searchKeyword} type="text" placeholder="検索キーワード入力"></AmplifyInput>
             <AmplifyButton type="button" onclick={this.handleClick}>検索</AmplifyButton>
+            <AmplifyButton type="button" onclick={this.handleClick2}>検索2</AmplifyButton>
             <div id="emb">
   　        </div>
           </center>
