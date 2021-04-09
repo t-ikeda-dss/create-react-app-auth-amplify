@@ -92,7 +92,7 @@ class App extends React.Component {
       
     const option = {
       headers: {
-        Authorization: token,
+        Authorization: 'Bearer ${(await Auth.currentSession()).getIdToken().getJwtToken()}',
       },
       'queryStringParameters': {
         'q': keyword
