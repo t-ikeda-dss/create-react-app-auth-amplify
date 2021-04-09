@@ -92,7 +92,7 @@ class App extends React.Component {
       
     const option = {
       headers: {
-        Authorization: 'Bearer' token
+        Authorization: token,
       },
       'queryStringParameters': {
         'q': keyword
