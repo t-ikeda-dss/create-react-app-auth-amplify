@@ -58,18 +58,37 @@ class App extends React.Component {
       }
     };
 
-    var res = API.get(apiName, path, option)
-    .then(response => {
-      console.log('reaponse = ' + response)
-      document.getElementById('emb').innerHTML = response
-    })
-    .catch(error => {
-      console.log(error.response)
+    var promise = API.get(apiName, path, option);
+    promise.then(
+      function(data) {
+        /* process the data */
+        console.log('data = ' + data);
+        document.getElementById('emb').innerHTML = data;
+      },
+      reaponse(data) {
+        /* process the data */
+        console.log('data = ' + data);
+        document.getElementById('emb').innerHTML = data;
+      },
+      function(error) {
+        /* handle the error */
+        console.log(error.response);
+      }
+    ).catch(error => {
+        console.log(error.response)
     });
-    if ( res == null ) {
-      res = "<p>null が返却されました。</p>"
-    }
-    console.log('res = ' + res)
+
+    //.then(response => {
+    //  console.log('reaponse = ' + response)
+    //  document.getElementById('emb').innerHTML = response
+    //})
+    //.catch(error => {
+    //  console.log(error.response)
+    //});
+    //if ( res == null ) {
+    //  res = "<p>null が返却されました。</p>"
+    //}
+    //console.log('res = ' + res)
     //--document.getElementById('emb').innerHTML = res
   };
 
