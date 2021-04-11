@@ -63,19 +63,13 @@ class App extends React.Component {
       }
     };
 
-    var promise = API.get(apiName, path, option);
-    promise.then(
-      function(data) {
-        /* process the data */
-        console.log('data = ' + data);
-        document.getElementById('emb').innerHTML = data;
-      },
-      function(error) {
-        /* handle the error */
-        console.log(error.response);
-      }
-    ).catch(error => {
-        console.log(error.response)
+    var promise = API.get(apiName, path, option)
+    .then(response => {
+      console.log('reaponse = ' + response)
+      document.getElementById('emb').innerHTML = response
+    })
+    .catch(error => {
+      console.log(error.response)
     });
 
     //.then(response => {
@@ -154,7 +148,7 @@ class App extends React.Component {
     if ( res == null ) {
       res = "<p>null が返却されました。</p>"
     }
-    console.log('res = ' + res)
+    //--console.log('res = ' + res)
     //--document.getElementById('emb').innerHTML = res
   };
 
@@ -168,7 +162,7 @@ class App extends React.Component {
             <legend>検索実行</legend>
             <label >検索文字列 : </label>
             <AmplifyInput id="scTxt" value={this.searchKeyword} type="text" placeholder="検索キーワード入力"></AmplifyInput>
-            <AmplifyButton type="button" onclick={this.handleClick}>検索</AmplifyButton>
+            <AmplifyButton type="button" onclick={this.handleClick2}>検索</AmplifyButton>
             <AmplifyButton type="button" onclick={this.handleClick3}>検索2</AmplifyButton>
             <div id="emb">
   　        </div>
