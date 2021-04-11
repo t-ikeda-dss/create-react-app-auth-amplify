@@ -27,6 +27,11 @@ Amplify.configure({
         // 
         name: "TestSearch",
         endpoint: "https://ln7hfi97tf.execute-api.ap-northeast-1.amazonaws.com/default/TestSearch"
+      },
+      {
+        // 
+        name: "PetStore",
+        endpoint: "https://13g3hslrd5.execute-api.ap-northeast-1.amazonaws.com/default/pets"
       }
     ]
   }
@@ -120,6 +125,39 @@ class App extends React.Component {
     //--document.getElementById('emb').innerHTML = res
   };
 
+  handleClick3 = async function () {
+    const apiName = 'PetStore'
+    const path = '/3'
+    const user = await Auth.currentAuthenticatedUser()
+    const token = user.signInUserSession.idToken.jwtToken
+
+    var textObj = document.getElementById('scTxt')
+    var keyword = textObj.firstChild.value
+      
+    const option = {
+      headers: {
+        Authorization: token,
+      },
+      'queryStringParameters': {
+        'q': keyword
+      }
+    };
+
+    var res = API.get(apiName, path, option)
+    .then(response => {
+      console.log('reaponse = ' + response)
+      document.getElementById('emb').innerHTML = response
+    })
+    .catch(error => {
+      console.log(error.response)
+    });
+    if ( res == null ) {
+      res = "<p>null が返却されました。</p>"
+    }
+    console.log('res = ' + res)
+    //--document.getElementById('emb').innerHTML = res
+  };
+
   render() {
     return (
       <AmplifyContainer>
@@ -131,7 +169,7 @@ class App extends React.Component {
             <label >検索文字列 : </label>
             <AmplifyInput id="scTxt" value={this.searchKeyword} type="text" placeholder="検索キーワード入力"></AmplifyInput>
             <AmplifyButton type="button" onclick={this.handleClick}>検索</AmplifyButton>
-            <AmplifyButton type="button" onclick={this.handleClick2}>検索2</AmplifyButton>
+            <AmplifyButton type="button" onclick={this.handleClick3}>検索2</AmplifyButton>
             <div id="emb">
   　        </div>
           </center>
