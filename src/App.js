@@ -104,48 +104,6 @@ class App extends React.Component {
       }
     };
 
-    var res = API.get(apiName, path, option)
-    .then(response => {
-      console.log('reaponse = ' + response)
-      document.getElementById('emb').innerHTML = response
-    })
-    .catch(error => {
-      console.log(error.response)
-    });
-    if ( res == null ) {
-      res = "<p>null が返却されました。</p>"
-    }
-    console.log('res = ' + res)
-    //--document.getElementById('emb').innerHTML = res
-  };
-
-  handleClick3 = async function () {
-    const apiName = 'PetStore'
-    const path = '/3'
-    const user = await Auth.currentAuthenticatedUser()
-    const token = user.signInUserSession.idToken.jwtToken
-
-    var textObj = document.getElementById('scTxt')
-    var keyword = textObj.firstChild.value
-      
-    const option = {
-      headers: {
-        Authorization: token,
-      },
-      'queryStringParameters': {
-        'q': keyword
-      }
-    };
-
-    //var res = API.get(apiName, path, option)
-    //.then(response => {
-    //  console.log('reaponse = ' + response)
-    //  document.getElementById('emb').innerHTML = response.type
-    //})
-    //.catch(error => {
-    //  console.log(error.response)
-    //});
-
     var resultHtml = "";
     var result = await API.get(apiName, path, option);
     if ( result == null ) {
@@ -168,17 +126,13 @@ class App extends React.Component {
           resultHtml += "<hr>";
           resultHtml +=    "<div style=\"margin-bottom:1.5em\">\n";
           resultHtml +=    "  <p>case : " + i +  "</p>\n";
-          if ('highlights' in hit) {
-            resultHtml +=    "  <p>" + hit.highlights.name +  "</p>\n";
-          } else {
-            resultHtml +=    "  <p>" + hit.fields.name +  "</p>\n";
-          }
+          resultHtml +=    "  <p>" + hit.highlights.name +  "</p>\n";
           resultHtml +=    "  <a href=\"" + hit.id + "\"  target=\"_blank\">" + hit.id + "</a>\n";
           resultHtml +=    "</div>\n";
           //================================================================
           //================================================================
           // create invisible part of search result html
-          resultHtml += "<div onclick=\"obj=document.getElementById(\'open";
+          resultHtml +=    "<div onclick=\"obj=document.getElementById(\'open";
           resultHtml +=    i;
           resultHtml +=    "\').style; obj.display=(obj.display==\'none\')?\'block\':\'none\';\">\n";
           resultHtml +=    "  <a style=\"cursor:pointer;\">+ click to expand</a>\n";
@@ -194,6 +148,34 @@ class App extends React.Component {
     }
     console.log('result = ' + result)
     document.getElementById('emb').innerHTML = resultHtml;
+  };
+
+  handleClick3 = async function () {
+    const apiName = 'PetStore'
+    const path = '/3'
+    const user = await Auth.currentAuthenticatedUser()
+    const token = user.signInUserSession.idToken.jwtToken
+
+    var textObj = document.getElementById('scTxt')
+    var keyword = textObj.firstChild.value
+      
+    const option = {
+      headers: {
+        Authorization: token,
+      },
+      'queryStringParameters': {
+        'q': keyword
+      }
+    };
+    
+    var res = API.get(apiName, path, option)
+    .then(response => {
+      console.log('reaponse = ' + response)
+      document.getElementById('emb').innerHTML = response
+    })
+    .catch(error => {
+      console.log(error.response)
+    });
   };
 
   render() {
