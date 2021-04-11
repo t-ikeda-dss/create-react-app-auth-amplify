@@ -137,19 +137,63 @@ class App extends React.Component {
       }
     };
 
-    var res = API.get(apiName, path, option)
-    .then(response => {
-      console.log('reaponse = ' + response)
-      document.getElementById('emb').innerHTML = response.type
-    })
-    .catch(error => {
-      console.log(error.response)
-    });
-    if ( res == null ) {
-      res = "<p>null が返却されました。</p>"
+    //var res = API.get(apiName, path, option)
+    //.then(response => {
+    //  console.log('reaponse = ' + response)
+    //  document.getElementById('emb').innerHTML = response.type
+    //})
+    //.catch(error => {
+    //  console.log(error.response)
+    //});
+
+    var resultHtml = "";
+    var result = await API.get(apiName, path, option);
+    if ( result == null ) {
+      resultHtml = "<p>null が返却されました。</p>"
+    } else {
+      // get data length
+      var foundCount = result.data.length;
+      if(foundCount > 0)
+      {
+        // header
+        resultHtml = "<p>search result</p>";
+        // make search result html
+        for(let i = 0; i < foundCount; i++)
+        {
+          var hit = result.data.hit[i];
+          var plainText = hit.highlights.content;
+          // create one
+          //================================================================
+          // create visible part of search result html
+          resultHtml += "<hr>";
+          resultHtml +=    "<div style=\"margin-bottom:1.5em\">\n";
+          resultHtml +=    "  <p>case : " + i +  "</p>\n";
+          if ('highlights' in hit) {
+            resultHtml +=    "  <p>" + hit.highlights.name +  "</p>\n";
+          } else {
+            resultHtml +=    "  <p>" + hit.fields.name +  "</p>\n";
+          }
+          resultHtml +=    "  <a href=\"" + hit.id + "\"  target=\"_blank\">" + hit.id + "</a>\n";
+          resultHtml +=    "</div>\n";
+          //================================================================
+          //================================================================
+          // create invisible part of search result html
+          resultHtml += "<div onclick=\"obj=document.getElementById(\'open";
+          resultHtml +=    i;
+          resultHtml +=    "\').style; obj.display=(obj.display==\'none\')?\'block\':\'none\';\">\n";
+          resultHtml +=    "  <a style=\"cursor:pointer;\">+ click to expand</a>\n";
+          resultHtml +=    "</div>\n";
+          resultHtml +=    "<div id=\"open" + i +  "\" style=\"display:none;clear:both;\">\n";
+          resultHtml +=    "  <p>" + plainText + "</p>\n";
+          resultHtml +=    "</div>\n";
+          resultHtml +=    "<div style=\"margin-bottom:1.5em\">\n";
+          resultHtml +=    "</div>\n";
+          //================================================================
+        }
+      }
     }
-    //--console.log('res = ' + res)
-    //--document.getElementById('emb').innerHTML = res
+    console.log('result = ' + result)
+    document.getElementById('emb').innerHTML = resultHtml;
   };
 
   render() {
