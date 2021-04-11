@@ -146,7 +146,7 @@ class App extends React.Component {
     var res = API.get(apiName, path, option)
     .then(response => {
       console.log('reaponse = ' + response)
-      document.getElementById('emb').innerHTML = response
+      document.getElementById('emb').innerHTML = response.type
     })
     .catch(error => {
       console.log(error.response)
