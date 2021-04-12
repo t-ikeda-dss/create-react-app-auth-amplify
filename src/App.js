@@ -63,27 +63,50 @@ class App extends React.Component {
       }
     };
 
-    var promise = API.get(apiName, path, option)
-    .then(response => {
-      console.log('reaponse = ' + response)
-      document.getElementById('emb').innerHTML = response
-    })
-    .catch(error => {
-      console.log(error.response)
-    });
-
-    //.then(response => {
-    //  console.log('reaponse = ' + response)
-    //  document.getElementById('emb').innerHTML = response
-    //})
-    //.catch(error => {
-    //  console.log(error.response)
-    //});
-    //if ( res == null ) {
-    //  res = "<p>null が返却されました。</p>"
-    //}
-    //console.log('res = ' + res)
-    //--document.getElementById('emb').innerHTML = res
+    var resultHtml = "";
+    var result = await API.get(apiName, path, option);
+    if ( result == null ) {
+      resultHtml = "<p>null が返却されました。</p>"
+    } else {
+      // get data length
+      var foundCount = result.body.length;
+      if(foundCount > 0)
+      {
+        // header
+        resultHtml = "<p>search result</p>";
+        // make search result html
+        for(let i = 0; i < foundCount; i++)
+        {
+          var hit = result.body[i];
+          var plainText = hit.highlights.content;
+          // create one
+          //================================================================
+          // create visible part of search result html
+          resultHtml += "<hr>";
+          resultHtml +=    "<div style=\"margin-bottom:1.5em\">\n";
+          resultHtml +=    "  <p>case : " + i +  "</p>\n";
+          resultHtml +=    "  <p>" + hit.highlights.name +  "</p>\n";
+          resultHtml +=    "  <a href=\"" + hit.id + "\"  target=\"_blank\">" + hit.id + "</a>\n";
+          resultHtml +=    "</div>\n";
+          //================================================================
+          //================================================================
+          // create invisible part of search result html
+          resultHtml +=    "<div onclick=\"obj=document.getElementById(\'open";
+          resultHtml +=    i;
+          resultHtml +=    "\').style; obj.display=(obj.display==\'none\')?\'block\':\'none\';\">\n";
+          resultHtml +=    "  <a style=\"cursor:pointer;\">+ click to expand</a>\n";
+          resultHtml +=    "</div>\n";
+          resultHtml +=    "<div id=\"open" + i +  "\" style=\"display:none;clear:both;\">\n";
+          resultHtml +=    "  <p>" + plainText + "</p>\n";
+          resultHtml +=    "</div>\n";
+          resultHtml +=    "<div style=\"margin-bottom:1.5em\">\n";
+          resultHtml +=    "</div>\n";
+          //================================================================
+        }
+      }
+    }
+    console.log('result = ' + result)
+    document.getElementById('emb').innerHTML = resultHtml;
   };
 
   handleClick2 = async function () {
@@ -188,8 +211,8 @@ class App extends React.Component {
             <legend>検索実行</legend>
             <label >検索文字列 : </label>
             <AmplifyInput id="scTxt" value={this.searchKeyword} type="text" placeholder="検索キーワード入力"></AmplifyInput>
-            <AmplifyButton type="button" onclick={this.handleClick2}>検索</AmplifyButton>
-            <AmplifyButton type="button" onclick={this.handleClick3}>検索2</AmplifyButton>
+            <AmplifyButton type="button" onclick={this.handleClick}>検索</AmplifyButton>
+            <AmplifyButton type="button" onclick={this.handleClick2}>検索2</AmplifyButton>
             <div id="emb">
   　        </div>
           </center>
