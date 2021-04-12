@@ -6,8 +6,8 @@ import { AmplifyButton, AmplifyInput } from '@aws-amplify/ui-react';
 import { I18n } from 'aws-amplify';
 import { vocabularies } from './vocabularies2';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import menu_page from './mainmenu';
-import search_page from './search';
+import mainmenu from './mainmenu';
+import search from './search';
 import aws_exports from './aws-exports2';
 Amplify.configure(aws_exports);
 
@@ -25,8 +25,8 @@ class App extends React.Component {
           <AmplifySignOut />
           <BrowserRouter>
             <Switch>
-              <Route exact path="/" component={page1} />
-              <Route exact path="/page2" component={page2} />　//追加　URLで/page2を指定するとpage2を表示する
+              <Route exact path="/" component={mainmenu} />
+              <Route exact path="/search" component={search} />
             </Switch>
          </BrowserRouter>
          </AmplifyAuthenticator>
