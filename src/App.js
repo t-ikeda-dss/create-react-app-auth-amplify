@@ -57,7 +57,7 @@ class App extends React.Component {
     const option = {
       headers: {
         //--Authorization: token,
-        Authtoken: token,
+        'header1': token,
       },
       'queryStringParameters': {
         'q': keyword
@@ -122,7 +122,7 @@ class App extends React.Component {
     const option = {
       headers: {
         Authorization: token,
-        Authtoken: token,
+        'header1': token,
       },
       'queryStringParameters': {
         'q': keyword
