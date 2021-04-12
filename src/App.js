@@ -110,7 +110,7 @@ class App extends React.Component {
       resultHtml = "<p>null が返却されました。</p>"
     } else {
       // get data length
-      var foundCount = result.data.length;
+      var foundCount = result.body.length;
       if(foundCount > 0)
       {
         // header
@@ -118,7 +118,7 @@ class App extends React.Component {
         // make search result html
         for(let i = 0; i < foundCount; i++)
         {
-          var hit = result.data.hit[i];
+          var hit = result.body[i];
           var plainText = hit.highlights.content;
           // create one
           //================================================================
@@ -171,7 +171,7 @@ class App extends React.Component {
     var res = API.get(apiName, path, option)
     .then(response => {
       console.log('reaponse = ' + response)
-      document.getElementById('emb').innerHTML = response
+      document.getElementById('emb').innerHTML = response.type;
     })
     .catch(error => {
       console.log(error.response)
