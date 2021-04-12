@@ -41,7 +41,7 @@ Amplify.configure({
 I18n.putVocabularies(vocabularies);
 I18n.setLanguage('ja');
 
-class App extends React.Component {
+class search extends React.Component {
 
   searchKeyword = ""
 
@@ -224,4 +224,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default search;
