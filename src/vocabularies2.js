@@ -139,5 +139,6 @@ export const vocabularies = {
         'Invalid MFA type': '無効なMFAタイプ',
         'Challenge response cannot be empty': 'チャレンジレスポンスを空にすることはできません',
         'Failed to get the session because the user is empty': 'ユーザーが空であるため、セッションを取得できませんでした',
+        'Invalid code received for user': 'ユーザーに対して無効なコードを受信しました',
     },
 };
