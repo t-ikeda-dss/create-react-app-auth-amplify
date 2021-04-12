@@ -4,6 +4,7 @@ import './App.css';
 import Amplify, { Auth, API } from 'aws-amplify';
 //--import { AmplifyAuthenticator, AmplifyContainer, AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react'; 
 import { AmplifyButton, AmplifyInput } from '@aws-amplify/ui-react'; 
+import { Link } from 'react-router-dom';
 //--import { I18n } from 'aws-amplify';
 //--import { vocabularies } from './vocabularies2';
 //--import aws_exports from './aws-exports';
