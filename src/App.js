@@ -48,8 +48,8 @@ class App extends React.Component {
   handleClick = async function () {
     const apiName = 'SearchFunction'
     const path = ''
-    //--const user = await Auth.currentAuthenticatedUser()
-    //--const token = user.signInUserSession.idToken.jwtToken
+    const user = await Auth.currentAuthenticatedUser()
+    const token = user.signInUserSession.idToken.jwtToken
 
     var textObj = document.getElementById('scTxt')
     var keyword = textObj.firstChild.value
@@ -57,6 +57,7 @@ class App extends React.Component {
     const option = {
       headers: {
         //--Authorization: token,
+        Authtoken: token,
       },
       'queryStringParameters': {
         'q': keyword
@@ -121,6 +122,7 @@ class App extends React.Component {
     const option = {
       headers: {
         Authorization: token,
+        Authtoken: token,
       },
       'queryStringParameters': {
         'q': keyword
