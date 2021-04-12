@@ -1,14 +1,16 @@
-import React from 'react';              //Reactを読み込んでいる
-import { Link } from 'react-router-dom';// 追加 Linkタブを読み込む
+import React from 'react';
+import { Link } from 'react-router-dom';
  
-class mainmenu extends React.Component {   //page1クラスにReact.Componentを継承する
+class mainmenu extends React.Component {
  
-    render() {                          //画面表示の為のrenderメソッドを定義する
+    render() {
         return (
             <div>
-                Main Menu!!!
-                <br/>
-                <Link to={`/search`}>Go To Search</Link>
+              Main Menu!!!
+              <br/>
+              <Link to={`/search`}>設定</Link>
+              <Link to={`/search`}>ユーザー情報</Link>
+              <Link to={`/search`}>検索画面を表示</Link>
             </div>
         );
     }
