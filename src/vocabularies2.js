@@ -129,5 +129,15 @@ export const vocabularies = {
         'Password does not conform to policy: Password must have numeric characters': 'パスワードには数字を含めてください (8文字以上の大文字小文字を含む英数字)', // 適宜修正
         "1 validation error detected: Value at 'password' failed to satisfy constraint: Member must have length greater than or equal to 6": 'パスワードは8文字以上、大文字小文字を含む英数字を指定してください', // 適宜修正。本来の意味とは異なるがこれで明示している。
         "2 validation errors detected: Value at 'password' failed to satisfy constraint: Member must have length greater than or equal to 6; Value at 'password' failed to satisfy constraint: Member must satisfy regular expression pattern: ^[\S]+.*[\S]+$": 'パスワードは8文字以上、大文字小文字を含む英数字を指定してください', // 適宜修正。本来の意味とは異なるがこれで明示している。
+        'Authentication Error': '認証エラー',
+        'Username cannot be empty': 'ユーザー名を空にすることはできません',
+        'The username should either be a string or one of the sign in types': 'ユーザー名は、文字列またはサインインタイプのいずれかである必要があります',
+        'Password cannot be empty': 'パスワードが入力されていません',
+        'Confirmation code cannot be empty': '確認コードを空にすることはできません',
+        'Error creating account': 'アカウントの作成中にエラーが発生しました',
+        'No valid MFA method provided': '有効なMFAメソッドが提供されていません',
+        'Invalid MFA type': '無効なMFAタイプ',
+        'Challenge response cannot be empty': 'チャレンジレスポンスを空にすることはできません',
+        'Failed to get the session because the user is empty': 'ユーザーが空であるため、セッションを取得できませんでした',
     },
 };
