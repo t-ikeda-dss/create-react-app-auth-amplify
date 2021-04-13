@@ -41,7 +41,11 @@ Amplify.configure({
 
 class search extends React.Component {
 
-  searchKeyword = ""
+  constructor(props){
+    super(props);
+    this.state = {
+      text: '',
+  }
 
   handleClick = async function () {
     const apiName = 'SearchFunction'
@@ -174,6 +178,12 @@ class search extends React.Component {
     }
     console.log('result = ' + result)
     document.getElementById('emb').innerHTML = resultHtml;
+    
+    this.props.history.push({
+      pathname: "/mainmenu",
+      state: { text: this.state.text }
+    });
+
   };
 
   handleClick3 = async function () {
@@ -210,7 +220,7 @@ class search extends React.Component {
         <Link to={`/`}>Main Menu</Link>
         <legend>検索実行</legend>
         <label >検索文字列 : </label>
-        <AmplifyInput id="scTxt" value={this.searchKeyword} type="text" placeholder="検索キーワード入力"></AmplifyInput>
+        <AmplifyInput id="scTxt" value={this.state.text} type="text" placeholder="検索キーワード入力"></AmplifyInput>
         <AmplifyButton type="button" onclick={this.handleClick}>検索</AmplifyButton>
         <AmplifyButton type="button" onclick={this.handleClick2}>検索2</AmplifyButton>
         <div id="emb">
