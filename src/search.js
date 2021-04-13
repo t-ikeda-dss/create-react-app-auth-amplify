@@ -41,11 +41,11 @@ Amplify.configure({
 
 class search extends React.Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      text: '',
-  }
+  //constructor(props){
+  //  super(props);
+  //  this.state = {
+  //    text: '',
+  //}
 
   handleClick = async function () {
     const apiName = 'SearchFunction'
@@ -179,10 +179,10 @@ class search extends React.Component {
     console.log('result = ' + result)
     document.getElementById('emb').innerHTML = resultHtml;
     
-    this.props.history.push({
-      pathname: "/mainmenu",
-      state: { text: keyword }
-    });
+    //this.props.history.push({
+    //  pathname: "/mainmenu",
+    //  state: { text: keyword }
+    //});
 
   };
 
