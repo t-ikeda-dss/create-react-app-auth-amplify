@@ -15,6 +15,7 @@ class mainmenu extends React.Component {
               <br/>
               <input id="lastword" value={sessionStorage.getItem("api-search-keyword")} type="text"></input>
               <Link to={`/search`}>検索画面を表示</Link>
+              <p>{this.props.location.state.text}</p>
             </div>
           </body>
         );
